@@ -22,7 +22,8 @@
                                     $.get("<?= API_URL; ?>aqmdetailstasiunbyid?trusur_api_key=<?= API_KEY; ?>&id_stasiun=" + id_stasiun, function(aqmalldata) {
                                         if (aqmalldata.status == true) {
 
-                                            content[id_stasiun] = " <div class=\"container h-100\" style=\"width:<?= ($_this->is_mobile()) ? "400;" : "600"; ?>px;\">";
+                                            content[id_stasiun] = "<div class=\"single-hero-slide bg-img slide-background-overlay\" style=\"background-image: url(img/header/slide_" + aqmalldata.province.replace(" ", "_").replace(" ", "_").replace(" ", "_") + ".png);\">";
+                                            content[id_stasiun] += " <div class=\"container h-100\" style=\"width:<?= ($_this->is_mobile()) ? "400;" : "600"; ?>px;\">";
                                             content[id_stasiun] += "    <div class=\"row h-100 align-items-end\">";
                                             content[id_stasiun] += "        <div class=\"col-12\">";
                                             content[id_stasiun] += "            <div class=\"awesome-weather-wrap awecf awe_wide temp7 awe_with_stats awe-code-802 awe-desc-scattered-clouds\" style=\"font-size:16px;font-weight:bolder;color: #ffffff; \">";
@@ -105,6 +106,7 @@
                                             content[id_stasiun] += "            </div>";
                                             content[id_stasiun] += "        </div>";
                                             content[id_stasiun] += "    </div>";
+                                            content[id_stasiun] += "</div>";
                                             content[id_stasiun] += "</div>";
 
                                             if (aqmalldata.category == "BAIK") markercolor = "green";

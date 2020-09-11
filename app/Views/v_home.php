@@ -45,31 +45,31 @@
 
                             <div class="awesome-weather-wrap awecf awe_wide temp7 awe_with_stats awe-code-802 awe-desc-scattered-clouds" style="<?= ($_this->is_mobile()) ? "display:none;" : ""; ?>color: #ffffff; ">
                                 <div class="row">
-                                    <div class="col-2"><img style="height:40px;width:40px;" src="img/pressure.png"></div>
+                                    <div class="col-2"><img style="height:30px;width:40px;" src="img/pressure.png"></div>
                                     <div class="col-3 btn"><?= ($province["data"]->pressure) ? $province["data"]->pressure : "0"; ?> mBar</div>
                                     <div class="col-1"></div>
-                                    <div class="col-2"><img style="height:40px;width:40px;" src="img/temparature.png"></div>
+                                    <div class="col-2"><img style="height:30px;width:40px;" src="img/temparature.png"></div>
                                     <div class="col-3 btn"><?= ($province["data"]->temperature) ? $province["data"]->temperature : "0"; ?> &#176;C</div>
                                     <div class="col-1"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-2"><img style="height:40px;width:40px;" src="img/wind_direction.png"></div>
+                                    <div class="col-2"><img style="height:30px;width:40px;" src="img/wind_direction.png"></div>
                                     <div class="col-3 btn"><?= ($province["data"]->wd) ? $province["data"]->wd : "0"; ?> &#176;</div>
                                     <div class="col-1"></div>
-                                    <div class="col-2"><img style="height:40px;width:40px;" src="img/wind_speed.png"></div>
+                                    <div class="col-2"><img style="height:30px;width:40px;" src="img/wind_speed.png"></div>
                                     <div class="col-3 btn"><?= ($province["data"]->ws) ? $province["data"]->ws : "0"; ?> Km/h</div>
                                     <div class="col-1"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-2"><img style="height:40px;width:40px;" src="img/humidity.png"></div>
+                                    <div class="col-2"><img style="height:30px;width:40px;" src="img/humidity.png"></div>
                                     <div class="col-3 btn"><?= ($province["data"]->humidity) ? $province["data"]->humidity : "0"; ?> %</div>
                                     <div class="col-1"></div>
-                                    <div class="col-2"><img style="height:40px;width:40px;" src="img/rain_rate.png"></div>
+                                    <div class="col-2"><img style="height:30px;width:40px;" src="img/rain_rate.png"></div>
                                     <div class="col-3 btn"><?= ($province["data"]->rain_intensity) ? $province["data"]->rain_intensity : "0"; ?> mm/jam</div>
                                     <div class="col-1"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-2"><img style="height:40px;width:40px;" src="img/solar_radiation.png"></div>
+                                    <div class="col-2"><img style="height:30px;width:40px;" src="img/solar_radiation.png"></div>
                                     <div class="col-3 btn"><?= ($province["data"]->sr) ? $province["data"]->sr : "0"; ?> watt/m2</div>
                                     <div class="col-7"></div>
                                 </div>
@@ -102,13 +102,45 @@
     </div>
 </div>
 
+<!-- ***** Apps Area Start ***** -->
+<div id="apps" class="hero-area d-flex align-items-center">
+    <!-- Back End Content -->
+    <div class="backEnd-content">
+        <img class="dots" src="img/core-img/dots.png" alt="" />
+    </div>
+
+    <!-- Hero Thumbnail -->
+    <div class="hero-thumbnail aboutUs equalize bg-img" style="background-image: url(img/bg_apps_big.jpg)"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content aboutUs equalize">
+        <div class="container-fluid h-100">
+            <div class="row">
+                <div class="col-12">
+                    <div class="portfolio-title">
+                        <h2>“Kini kamu bisa mengetahui polusi udara disekitarmu, ayo download aplikasi Ispumap.id”</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="line" style="padding:0px;"></div>
+                    <a href="https://play.google.com/store/apps/details?id=com.ispumap" target="_blank" class="btn sonar-btn white-btn">Download Apps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Apps Area End ***** -->
+
+
 <!-- ***** Portfolio Area Start ***** -->
 <div class="portfolio-area section-padding-100">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="portfolio-title">
-                    <h2>“In photography there is a reality so subtle that it becomes more <span>real</span> than reality.”</h2>
+                    <h2>“Data Polusi Berdasarkan Provinsi di Indonesia dalam kondisi data saat ini”</h2>
                 </div>
             </div>
         </div>
@@ -119,7 +151,7 @@
                 <div class="single-portfolio-item mt-100 portfolio-item-1 wow fadeIn">
                     <div class="backend-content">
                         <img class="dots" src="img/core-img/dots.png" alt="">
-                        <h2>Reality</h2>
+                        <h2>Provinsi</h2>
                     </div>
                     <div class="portfolio-thumb">
                         <img src="img/bg-img/p1.png" alt="">
@@ -243,15 +275,15 @@
 <!-- ***** Call to Action Area Start ***** -->
 <div class="sonar-call-to-action-area section-padding-0-100">
     <div class="backEnd-content">
-        <h2>Dream</h2>
+        <h2>Contact Us</h2>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="call-to-action-content wow fadeInUp" data-wow-delay="0.5s">
-                    <h2>I am an experienced photographer</h2>
+                    <h2>“Contributing to world sustainability through providing suitable air pollution measurement instruments; and providing accurate and recognized air quality instrument calibration services”</h2>
                     <h5>Let’s talk</h5>
-                    <a href="#" class="btn sonar-btn mt-100">contact me</a>
+                    <a href="#" class="btn sonar-btn mt-100">Contact Us</a>
                 </div>
             </div>
         </div>
