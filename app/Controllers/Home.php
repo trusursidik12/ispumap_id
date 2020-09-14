@@ -6,16 +6,16 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		$data["_this"] = $this;
-		$googlemaps = new Googlemaps();
-		$header_provinces[0]["name"] = "DKI Jakarta";
-		$header_provinces[0]["id_stasiun"] = "JAKARTA";
-		$header_provinces[1]["name"] = "Banten";
-		$header_provinces[1]["id_stasiun"] = "CILEGON_PCI";
-		$header_provinces[2]["name"] = "Lampung";
-		$header_provinces[2]["id_stasiun"] = "LAMPUNG";
-		$header_provinces[3]["name"] = "Sumatera Selatan";
-		$header_provinces[3]["id_stasiun"] = "PALEMBANG";
+		//$data["_this"] = $this;
+		//$googlemaps = new Googlemaps();
+		// $header_provinces[0]["name"] = "DKI Jakarta";
+		// $header_provinces[0]["id_stasiun"] = "JAKARTA";
+		// $header_provinces[1]["name"] = "Banten";
+		// $header_provinces[1]["id_stasiun"] = "CILEGON_PCI";
+		// $header_provinces[2]["name"] = "Lampung";
+		// $header_provinces[2]["id_stasiun"] = "LAMPUNG";
+		// $header_provinces[3]["name"] = "Sumatera Selatan";
+		// $header_provinces[3]["id_stasiun"] = "PALEMBANG";
 		// $header_provinces[4]["name"] = "Riau";
 		// $header_provinces[4]["id_stasiun"] = "PEKANBARU";
 		// $header_provinces[5]["name"] = "Jambi";
@@ -65,14 +65,14 @@ class Home extends BaseController
 		// 	}
 		// }
 
-		$data["header_provinces"] = $header_provinces;
+		// $data["header_provinces"] = $header_provinces;
 		// $googlemaps->initialize();
 		// if ($this->is_mobile()) {
 		// 	$googlemaps->zoom = 5;
 		// 	$googlemaps->center = "-6.215416, 106.802940";
 		// }
 		// $data["map"] = $googlemaps->create_map();
-		echo view('v_header', $data);
+		echo view('v_header');
 		// echo view('v_menu');
 		// echo view('v_home');
 		// echo view('v_footer');
