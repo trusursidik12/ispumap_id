@@ -66,16 +66,16 @@ class Home extends BaseController
 		// }
 
 		$data["header_provinces"] = $header_provinces;
-		$googlemaps->initialize();
-		if ($this->is_mobile()) {
-			$googlemaps->zoom = 5;
-			$googlemaps->center = "-6.215416, 106.802940";
-		}
-		$data["map"] = $googlemaps->create_map();
+		// $googlemaps->initialize();
+		// if ($this->is_mobile()) {
+		// 	$googlemaps->zoom = 5;
+		// 	$googlemaps->center = "-6.215416, 106.802940";
+		// }
+		// $data["map"] = $googlemaps->create_map();
 		echo view('v_header', $data);
-		echo view('v_menu');
+		// echo view('v_menu');
 		// echo view('v_home');
-		echo view('v_footer');
+		// echo view('v_footer');
 		// echo view('v_home_js');
 	}
 
