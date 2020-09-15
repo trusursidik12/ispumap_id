@@ -19,7 +19,10 @@
                     <a class="nav-link" href="javascript:goto_area('map');">Maps</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:goto_area('ranking');">Ranking</a>
+                    <a class="nav-link" href="javascript:goto_area('apps');">Apps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:goto_area('ispu');">ISPU</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:goto_area('news');">News</a>

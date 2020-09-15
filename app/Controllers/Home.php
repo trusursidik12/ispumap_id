@@ -22,20 +22,20 @@ class Home extends BaseController
 		$header_provinces[0]["id_stasiun"] = "JAKARTA";
 		$header_provinces[1]["name"] = "Banten";
 		$header_provinces[1]["id_stasiun"] = "CILEGON_PCI";
-		$header_provinces[2]["name"] = "Lampung";
-		$header_provinces[2]["id_stasiun"] = "LAMPUNG";
-		$header_provinces[3]["name"] = "Sumatera Selatan";
-		$header_provinces[3]["id_stasiun"] = "PALEMBANG";
-		$header_provinces[4]["name"] = "Riau";
-		$header_provinces[4]["id_stasiun"] = "PEKANBARU";
-		$header_provinces[5]["name"] = "Jambi";
-		$header_provinces[5]["id_stasiun"] = "JAMBI";
-		$header_provinces[6]["name"] = "Kalimantan Selatan";
-		$header_provinces[6]["id_stasiun"] = "BANJARMASIN";
-		$header_provinces[7]["name"] = "Kalimantan Tengah";
-		$header_provinces[7]["id_stasiun"] = "KOTAWARINGIN_BARAT";
-		$header_provinces[8]["name"] = "Kalimantan Timur";
-		$header_provinces[8]["id_stasiun"] = "BALIKPAPAN_BB";
+		// $header_provinces[2]["name"] = "Lampung";
+		// $header_provinces[2]["id_stasiun"] = "LAMPUNG";
+		// $header_provinces[3]["name"] = "Sumatera Selatan";
+		// $header_provinces[3]["id_stasiun"] = "PALEMBANG";
+		// $header_provinces[4]["name"] = "Riau";
+		// $header_provinces[4]["id_stasiun"] = "PEKANBARU";
+		// $header_provinces[5]["name"] = "Jambi";
+		// $header_provinces[5]["id_stasiun"] = "JAMBI";
+		// $header_provinces[6]["name"] = "Kalimantan Selatan";
+		// $header_provinces[6]["id_stasiun"] = "BANJARMASIN";
+		// $header_provinces[7]["name"] = "Kalimantan Tengah";
+		// $header_provinces[7]["id_stasiun"] = "KOTAWARINGIN_BARAT";
+		// $header_provinces[8]["name"] = "Kalimantan Timur";
+		// $header_provinces[8]["id_stasiun"] = "BALIKPAPAN_BB";
 		foreach ($header_provinces as $key => $province) {
 			if ($aqmprovince = $this->home->get_aqmprovince($province["name"])) {
 				if ($aqmprovince->resumes->worst_stasiun_id != "")
@@ -73,24 +73,28 @@ class Home extends BaseController
 		}
 		$data["map"] = $googlemaps->create_map();
 
-		// $data['aqmrankpm10'] 					= $this->f_home_m->get_aqmrankpm10();
-		// $data['aqmrankpm25'] 					= $this->f_home_m->get_aqmrankpm25();
-		// $data['aqmrankso2'] 					= $this->f_home_m->get_aqmrankso2();
-		// $data['aqmrankco'] 						= $this->f_home_m->get_aqmrankco();
-		// $data['aqmranko3'] 						= $this->f_home_m->get_aqmranko3();
-		// $data['aqmrankno2'] 					= $this->f_home_m->get_aqmrankno2();
-		// $data['aqmprovinsi'] 					= $this->f_home_m->get_aqmprovinsi_web();
-		// $data['aqmrankpm10yesterday'] 			= $this->f_home_m->get_aqmrankpm10_yesterday();
-		// $data['aqmrankpm25yesterday'] 			= $this->f_home_m->get_aqmrankpm25_yesterday();
-		// $data['aqmrankso2yesterday'] 			= $this->f_home_m->get_aqmrankso2_yesterday();
-		// $data['aqmrankcoyesterday'] 			= $this->f_home_m->get_aqmrankco_yesterday();
-		// $data['aqmranko3yesterday'] 			= $this->f_home_m->get_aqmranko3_yesterday();
-		// $data['aqmrankno2yesterday'] 			= $this->f_home_m->get_aqmrankno2_yesterday();
+		$data['aqmrankpm10'] 					= json_decode(json_encode($this->home->get_aqmrankpm10()), true)['data'];
+		$data['aqmrankpm25'] 					= json_decode(json_encode($this->home->get_aqmrankpm25()), true)['data'];
+		$data['aqmrankso2'] 					= json_decode(json_encode($this->home->get_aqmrankso2()), true)['data'];
+		$data['aqmrankco'] 						= json_decode(json_encode($this->home->get_aqmrankco()), true)['data'];
+		$data['aqmranko3'] 						= json_decode(json_encode($this->home->get_aqmranko3()), true)['data'];
+		$data['aqmrankno2'] 					= json_decode(json_encode($this->home->get_aqmrankno2()), true)['data'];
+		$data['aqmprovinsi'] 					= json_decode(json_encode($this->home->get_aqmprovinsi_web()), true)['data'];
+		$data['aqmrankpm10yesterday'] 			= json_decode(json_encode($this->home->get_aqmrankpm10_yesterday()), true)['data'];
+		$data['aqmrankpm25yesterday'] 			= json_decode(json_encode($this->home->get_aqmrankpm25_yesterday()), true)['data'];
+		$data['aqmrankso2yesterday'] 			= json_decode(json_encode($this->home->get_aqmrankso2_yesterday()), true)['data'];
+		$data['aqmrankcoyesterday'] 			= json_decode(json_encode($this->home->get_aqmrankco_yesterday()), true)['data'];
+		$data['aqmranko3yesterday'] 			= json_decode(json_encode($this->home->get_aqmranko3_yesterday()), true)['data'];
+		$data['aqmrankno2yesterday'] 			= json_decode(json_encode($this->home->get_aqmrankno2_yesterday()), true)['data'];
 
 
 		echo view('v_header', $data);
 		echo view('v_menu');
 		echo view('v_home');
+		echo view('v_home_map');
+		echo view('v_home_apps');
+		echo view('v_home_ispu');
+		echo view('v_home_contact');
 		echo view('v_footer');
 		echo view('v_home_js');
 	}

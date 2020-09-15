@@ -51,388 +51,234 @@ class m_home extends Model
         else return NULL;
     }
 
-    public function get_aqmprovinsi_web()
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmprovinceweb', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-
-    public function get_aqmprovinsi_list()
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmprovincelist', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-
-    public function get_aqmnews($keyword = "")
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmnews', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==',
-                    'k' => $keyword
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-    public function get_newssearch($keyword)
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/news/search', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==',
-                    'title' => $keyword
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-
-    public function get_aqmnews_slug($slug)
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmnewsslug', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==',
-                    'slug' => $slug
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-
-
-
-    public function get_lat_lon($lat, $lon)
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmdetailstasiun', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==',
-                    'lat' => $lat,
-                    'lon' => $lon
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result;
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-
-    public function get_dampak($id_stasiun)
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmeffectbystasiun', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==',
-                    'id_stasiun' => $id_stasiun
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result;
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-
-    public function get_aqmabout()
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmabout', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-
-    public function get_aqmfaqs()
-    {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmfaqs', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-    }
-
     public function get_aqmrankpm10()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankpm10', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmrankpm10?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankpm25()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankpm25', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmrankpm25?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankso2()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankso2', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmrankso2?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankco()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankco', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmrankco?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmranko3()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmranko3', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmranko3?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankno2()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankno2', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
+        $ch = curl_init(API_URL . "aqmrankno2?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
 
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+    public function get_aqmprovinsi_web()
+    {
+        $ch = curl_init(API_URL . "aqmstasiun?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankpm10_yesterday()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankpm10yesterday', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmrankpm10yesterday?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankpm25_yesterday()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankpm25yesterday', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmrankpm25yesterday?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankso2_yesterday()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankso2yesterday', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmrankso2yesterday?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankco_yesterday()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankcoyesterday', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmrankcoyesterday?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmranko3_yesterday()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmranko3yesterday', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
-
-            $result = json_decode($response->getBody()->getContents(), true);
-
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+        $ch = curl_init(API_URL . "aqmranko3yesterday?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 
     public function get_aqmrankno2_yesterday()
     {
-        try {
-            $response = $this->_client->request('GET', 'api/aqmrankno2yesterday', [
-                'query' => [
-                    'trusur_api_key' => 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA=='
-                ],
-            ]);
+        $ch = curl_init(API_URL . "aqmrankno2yesterday?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
 
-            $result = json_decode($response->getBody()->getContents(), true);
+    public function get_aqmprovinsi_list()
+    {
+        $ch = curl_init(API_URL . "aqmprovincelist?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
 
-            return $result['data'];
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
+    public function get_aqmnews($keyword = "")
+    {
+        $ch = curl_init(API_URL . "aqmnews?trusur_api_key=" . API_KEY . "&k=" . $keyword);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
+
+    public function get_newssearch($keyword)
+    {
+        $ch = curl_init(API_URL . "news/search?trusur_api_key=" . API_KEY . "&title=" . $keyword);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
+
+    public function get_aqmnews_slug($slug)
+    {
+        $ch = curl_init(API_URL . "aqmnewsslug?trusur_api_key=" . API_KEY . "&slug=" . $slug);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
+
+    public function get_lat_lon($lat, $lon)
+    {
+        $ch = curl_init(API_URL . "aqmdetailstasiun?trusur_api_key=" . API_KEY . "&lat=" . $lat . "&lon=" . $lon);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
+
+    public function get_dampak($id_stasiun)
+    {
+        $ch = curl_init(API_URL . "aqmeffectbystasiun?trusur_api_key=" . API_KEY . "&id_stasiun=" . $id_stasiun);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
+
+    public function get_aqmabout()
+    {
+        $ch = curl_init(API_URL . "aqmabout?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
+
+    public function get_aqmfaqs()
+    {
+        $ch = curl_init(API_URL . "aqmfaqs?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
     }
 }
