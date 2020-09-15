@@ -19,7 +19,12 @@ use CodeIgniter\Controller;
 
 class BaseController extends Controller
 {
+	protected $session;
 
+	public function __construct()
+	{
+		$this->session = \Config\Services::session();
+	}
 	/**
 	 * An array of helpers to be loaded automatically upon
 	 * class instantiation. These helpers will be available

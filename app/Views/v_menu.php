@@ -6,32 +6,29 @@
     </div>
     <!-- Logo Area -->
     <div class="logo-area">
-        <a href="/"><img style="max-height: 40px;" src="img/ispumap_logo.png"></a>
+        <a href="<?= base_url(); ?>/"><img style="max-height: 40px;" src="img/ispumap_logo.png"></a>
     </div>
     <!-- Nav -->
     <div class="sonarNav">
         <nav>
             <ul>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="javascript:goto_area('home');">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about-me.html">About Me</a>
+                    <a class="nav-link" href="javascript:goto_area('map');">Maps</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
+                    <a class="nav-link" href="javascript:goto_area('ranking');">Ranking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    <a class="nav-link" href="javascript:goto_area('news');">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Blog</a>
+                    <a class="nav-link" href="javascript:goto_area('about_us');">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="elements.html">Elements</a>
+                    <a class="nav-link" href="javascript:goto_area('contact');">Contact Us</a>
                 </li>
             </ul>
         </nav>
@@ -57,7 +54,7 @@
                 <div class="menu-area d-flex justify-content-between">
                     <!-- Logo Area  -->
                     <div class="logo-area">
-                        <a href="/"><img style="max-height: 40px;" src="img/ispumap_logo.png"></a>
+                        <a href="<?= base_url(); ?>/"><img style="max-height: 40px;" src="img/ispumap_logo.png"></a>
                     </div>
                     <div class="menu-content-area d-flex align-items-center">
                         <span class="navbar-toggler-icon" id="menuIcon"></span>

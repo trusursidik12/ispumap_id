@@ -2,8 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Models\m_home;
+
 class Home extends BaseController
 {
+	protected $home;
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->home =  new m_home();
+	}
+
 	public function index()
 	{
 		$data["_this"] = $this;
@@ -27,12 +37,7 @@ class Home extends BaseController
 		$header_provinces[8]["name"] = "Kalimantan Timur";
 		$header_provinces[8]["id_stasiun"] = "BALIKPAPAN_BB";
 		foreach ($header_provinces as $key => $province) {
-			$ch = curl_init(API_URL . "aqmprovince?trusur_api_key=" . API_KEY . "&provinsi=" . urlencode($province["name"]));
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			$output = curl_exec($ch);
-			curl_close($ch);
-			if (stripos(" " . $output, "\"status\":true") > 0) {
-				$aqmprovince = json_decode("[" . $output . "]")[0];
+			if ($aqmprovince = $this->home->get_aqmprovince($province["name"])) {
 				if ($aqmprovince->resumes->worst_stasiun_id != "")
 					$stasiun_id = str_replace("KLHK-", "", $aqmprovince->resumes->worst_stasiun_id);
 				else
@@ -52,12 +57,7 @@ class Home extends BaseController
 					}
 				}
 
-				$ch = curl_init(API_URL . "aqmdata?trusur_api_key=" . API_KEY . "&id_stasiun=" . $stasiun_id);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-				$output = curl_exec($ch);
-				curl_close($ch);
-				if (stripos(" " . $output, "\"status\":true") > 0) {
-					$aqmdata = json_decode("[" . $output . "]")[0];
+				if ($aqmdata = $this->home->get_aqmdata($stasiun_id)) {
 					$header_provinces[$key]["data"] = $aqmdata->data;
 				} else {
 					$header_provinces[$key]["data"] = NULL;
@@ -72,6 +72,22 @@ class Home extends BaseController
 			$googlemaps->center = "-6.215416, 106.802940";
 		}
 		$data["map"] = $googlemaps->create_map();
+
+		// $data['aqmrankpm10'] 					= $this->f_home_m->get_aqmrankpm10();
+		// $data['aqmrankpm25'] 					= $this->f_home_m->get_aqmrankpm25();
+		// $data['aqmrankso2'] 					= $this->f_home_m->get_aqmrankso2();
+		// $data['aqmrankco'] 						= $this->f_home_m->get_aqmrankco();
+		// $data['aqmranko3'] 						= $this->f_home_m->get_aqmranko3();
+		// $data['aqmrankno2'] 					= $this->f_home_m->get_aqmrankno2();
+		// $data['aqmprovinsi'] 					= $this->f_home_m->get_aqmprovinsi_web();
+		// $data['aqmrankpm10yesterday'] 			= $this->f_home_m->get_aqmrankpm10_yesterday();
+		// $data['aqmrankpm25yesterday'] 			= $this->f_home_m->get_aqmrankpm25_yesterday();
+		// $data['aqmrankso2yesterday'] 			= $this->f_home_m->get_aqmrankso2_yesterday();
+		// $data['aqmrankcoyesterday'] 			= $this->f_home_m->get_aqmrankco_yesterday();
+		// $data['aqmranko3yesterday'] 			= $this->f_home_m->get_aqmranko3_yesterday();
+		// $data['aqmrankno2yesterday'] 			= $this->f_home_m->get_aqmrankno2_yesterday();
+
+
 		echo view('v_header', $data);
 		echo view('v_menu');
 		echo view('v_home');

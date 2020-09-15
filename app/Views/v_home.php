@@ -1,7 +1,7 @@
 <link rel='stylesheet' href='css/main-style.css' type='text/css' media='all' />
 
 <!-- ***** Hero Area Start ***** -->
-<section class="hero-area">
+<section class="hero-area" id="home">
     <div class="hero-slides owl-carousel">
         <?php foreach ($header_provinces as $key => $province) : ?>
             <!-- Single Hero Slide -->
@@ -134,7 +134,7 @@
 <!-- ***** Apps Area End ***** -->
 
 <!-- ***** Call to Action Area Start ***** -->
-<div class="sonar-call-to-action-area section-padding-0-100">
+<div id="contact" class="sonar-call-to-action-area section-padding-100">
     <div class="backEnd-content">
         <h2>Contact Us</h2>
     </div>

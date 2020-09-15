@@ -1,4 +1,12 @@
 <script>
+    function goto_area(area) {
+        $(document).ready(function() {
+            $('html, body').animate({
+                scrollTop: $('#' + area).offset().top
+            }, 1000);
+        });
+    }
+
     function getCssIspuCategory($ispu) {
         if ($ispu <= 50) return "success";
         else if ($ispu <= 100) return "primary";
