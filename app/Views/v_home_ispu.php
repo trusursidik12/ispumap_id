@@ -1,10 +1,21 @@
-<link href="css/styleblog.css" rel="stylesheet">
 <link href="css/design-table.css" rel="stylesheet">
 <style>
     .nav-tabs .nav-link.active {
         font-weight: bold;
         background-color: transparent;
         border-bottom: 3px solid #dd0000;
+    }
+
+    .btn-custom {
+        margin-right: 4px;
+        margin-bottom: 4px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 1px;
+        transition: all 0.5s ease 0s;
+        padding: 8px 20px;
+        font-size: 13px !important;
     }
 </style>
 <!-- ***** Hero Area Start ***** -->
@@ -57,35 +68,35 @@
                                             <td class="cell100 column1">1</td>
                                             <td class="cell100 column2">Baik &#128515;</td>
                                             <td class="cell100 column3">
-                                                <div class="btn btn-info btn-sm" style="border-radius: 10px;background: #28a745;border: 2px solid #28a745;margin-bottom: 0px;">0 - 50</div>
+                                                <div class="btn btn-custom btn-info btn-sm" style="border-radius: 10px;background: #28a745;border: 2px solid #28a745;margin-bottom: 0px;">0 - 50</div>
                                             </td>
                                         </tr>
                                         <tr class="row100 body">
                                             <td class="cell100 column1">2</td>
                                             <td class="cell100 column2">Sedang &#128578;</td>
                                             <td class="cell100 column3">
-                                                <div class="btn btn-info btn-sm" style="border-radius: 10px;background: #007bff;border: 2px solid #007bff;margin-bottom: 0px;">51 - 100
+                                                <div class="btn btn-custom btn-info btn-sm" style="border-radius: 10px;background: #007bff;border: 2px solid #007bff;margin-bottom: 0px;">51 - 100
                                             </td>
                                         </tr>
                                         <tr class="row100 body">
                                             <td class="cell100 column1">3</td>
                                             <td class="cell100 column2">Tidak Sehat &#128552;</td>
                                             <td class="cell100 column3">
-                                                <div class="btn btn-info btn-sm" style="border-radius: 10px;background: #ffc107;border: 2px solid #ffc107;margin-bottom: 0px;">101 - 200
+                                                <div class="btn btn-custom btn-info btn-sm" style="border-radius: 10px;background: #ffc107;border: 2px solid #ffc107;margin-bottom: 0px;">101 - 200
                                             </td>
                                         </tr>
                                         <tr class="row100 body">
                                             <td class="cell100 column1">4</td>
                                             <td class="cell100 column2">Sangat Tidak Sehat &#129319;</td>
                                             <td class="cell100 column3">
-                                                <div class="btn btn-info btn-sm" style="border-radius: 10px;background: #dc3545;border: 2px solid #dc3545;margin-bottom: 0px;">201 - 300
+                                                <div class="btn btn-custom btn-info btn-sm" style="border-radius: 10px;background: #dc3545;border: 2px solid #dc3545;margin-bottom: 0px;">201 - 300
                                             </td>
                                         </tr>
                                         <tr class="row100 body">
                                             <td class="cell100 column1">5</td>
                                             <td class="cell100 column2">Berbahaya &#128567;</td>
                                             <td class="cell100 column3">
-                                                <div class="btn btn-info btn-sm" style="border-radius: 10px;background: #343a40;border: 2px solid #343a40;margin-bottom: 0px;"> >300
+                                                <div class="btn btn-custom btn-info btn-sm" style="border-radius: 10px;background: #343a40;border: 2px solid #343a40;margin-bottom: 0px;"> >300
                                             </td>
                                         </tr>
                                     </tbody>
@@ -140,32 +151,32 @@
                                                                 <td class="cell100 column2"><?= $aqmispu->id_stasiun ?></td>
                                                                 <td class="cell100 column3"><?= $province; ?></td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->pm10); ?> btn-sm" style="border-radius: 10px;">
+                                                                    <div class="btn btn-custom btn-<?= $_this->getCssIspuCategory($aqmispu->pm10); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->pm10 ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->pm25); ?> btn-sm" style="border-radius: 10px;">
+                                                                    <div class="btn btn-custom btn-<?= $_this->getCssIspuCategory($aqmispu->pm25); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->pm25 ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->so2); ?> btn-sm" style="border-radius: 10px;">
+                                                                    <div class="btn btn-custom btn-<?= $_this->getCssIspuCategory($aqmispu->so2); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->so2 ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->co); ?> btn-sm" style="border-radius: 10px;">
+                                                                    <div class="btn btn-custom btn-<?= $_this->getCssIspuCategory($aqmispu->co); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->co ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->o3); ?> btn-sm" style="border-radius: 10px;">
+                                                                    <div class="btn btn-custom btn-<?= $_this->getCssIspuCategory($aqmispu->o3); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->o3 ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->no2); ?> btn-sm" style="border-radius: 10px;">
+                                                                    <div class="btn btn-custom btn-<?= $_this->getCssIspuCategory($aqmispu->no2); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->no2 ?>
                                                                     </div>
                                                                 </td>
