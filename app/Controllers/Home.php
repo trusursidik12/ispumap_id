@@ -94,6 +94,7 @@ class Home extends BaseController
 		echo view('v_home_apps');
 		echo view('v_home_ispu');
 		echo view('v_home_news');
+		echo view('v_home_about_us');
 		echo view('v_home_contact');
 		echo view('v_footer');
 		echo view('v_home_js');
