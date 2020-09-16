@@ -1,3 +1,4 @@
+<link href="css/styleblog.css" rel="stylesheet">
 <link href="css/design-table.css" rel="stylesheet">
 <style>
     .nav-tabs .nav-link.active {
@@ -139,32 +140,32 @@
                                                                 <td class="cell100 column2"><?= $aqmispu->id_stasiun ?></td>
                                                                 <td class="cell100 column3"><?= $province; ?></td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->pm10); ?> btn-sm">
+                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->pm10); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->pm10 ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->pm25); ?> btn-sm">
+                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->pm25); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->pm25 ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->so2); ?> btn-sm">
+                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->so2); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->so2 ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->co); ?> btn-sm">
+                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->co); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->co ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->o3); ?> btn-sm">
+                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->o3); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->o3 ?>
                                                                     </div>
                                                                 </td>
                                                                 <td class="cell100 column4">
-                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->no2); ?> btn-sm">
+                                                                    <div class="btn btn-<?= $_this->getCssIspuCategory($aqmispu->no2); ?> btn-sm" style="border-radius: 10px;">
                                                                         <?= $aqmispu->no2 ?>
                                                                     </div>
                                                                 </td>
