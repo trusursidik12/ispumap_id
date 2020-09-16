@@ -17,6 +17,7 @@
                     <div class="line" style="padding:0px;"></div>
                     <h2>ISPU</h2>
                     <p>Indeks Standar Pencemar Udara (ISPU) (bahasa Inggris: Air Pollution Index, disingkat API) adalah laporan kualitas udara kepada masyarakat untuk menerangkan seberapa bersih atau tercemarnya kualitas udara dan bagaimana dampaknya terhadap kesehatan setelah menghirup udara tersebut selama beberapa jam atau hari. Penetapan ISPU ini mempertimbangkan tingkat mutu udara terhadap kesehatan manusia, hewan, tumbuhan, bangunan, dan nilai estetika. ISPU ditetapkan berdasarkan 5 pencemar utama, yaitu: karbon monoksida (CO), sulfur dioksida (SO2), nitrogen dioksida (NO2), Ozon permukaan (O3), dan partikel debu (PM10). Di Indonesia ISPU diatur berdasarkan Keputusan Badan Pengendalian Dampak Lingkungan (Bapedal) Nomor KEP-107/Kabapedal/11/1997.</p>
+                    <a href="javascript:goto_area('ispu_detail');" class="btn sonar-btn white-btn">View More</a>
                 </div>
             </div>
         </div>
@@ -25,7 +26,7 @@
     <div class="hero-thumbnail equalize bg-img" style="background-image: url(img/clean_air.jpg);"></div>
 </div>
 <!-- ***** Hero Area End ***** -->
-<div class="section-padding-100" id="ispu">
+<div class="section-padding-100" id="ispu_detail">
     <div class="container">
         <div class="row">
             <!-- Single Portfoio Area -->
