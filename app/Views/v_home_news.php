@@ -44,9 +44,9 @@
                                     <div class="sonar-blog-sidebar-area">
 
                                         <!-- Search Widget -->
-                                        <div class="search-widget-area mb-50">
+                                        <div class="ispu-form search-widget-area mb-50">
                                             <form action="news" method="get">
-                                                <input type="search" name="keyword" placeholder="Search">
+                                                <input type="search" name="keyword" style="border: none !important;border-bottom: 1px solid !important;border-color: #c0c0c0 !important" placeholder="Search">
                                                 <button type="submit"><i class="ti-search"></i></button>
                                             </form>
                                         </div>

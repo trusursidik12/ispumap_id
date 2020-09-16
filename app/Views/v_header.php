@@ -21,7 +21,21 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="style.css">
-
+    <style>
+        .ispu-form .form-control {
+            width: 100%;
+            height: 60px;
+            padding: 0 15px;
+            border: none !important;
+            border-bottom: 1px solid !important;
+            border-color: #c0c0c0 !important;
+            border-radius: 0;
+            font-size: 12px;
+            font-style: italic;
+            color: #2f2f2f;
+            background-color: transparent;
+        }
+    </style>
 </head>
 
 <body>
