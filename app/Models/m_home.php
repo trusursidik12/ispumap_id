@@ -29,6 +29,17 @@ class m_home extends Model
         else return NULL;
     }
 
+    public function get_aqmispu_all()
+    {
+        $ch = curl_init(API_URL . "aqmispuall?trusur_api_key=" . API_KEY);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
+
     public function get_aqmispu($id_stasiun)
     {
         $ch = curl_init(API_URL . "aqmispu?trusur_api_key=" . API_KEY . "&id_stasiun=" . $id_stasiun);

@@ -1,4 +1,5 @@
 <!-- ***** Call to Action Area Start ***** -->
+<div class="section-padding-100"></div>
 <div id="contact" class="sonar-call-to-action-area section-padding-100">
     <div class="backEnd-content">
         <h2>Contact Us</h2>
