@@ -216,6 +216,17 @@ class m_home extends Model
         else return NULL;
     }
 
+    public function get_aqmnewstop($limit = 6)
+    {
+        $ch = curl_init(API_URL . "aqmnewstop?trusur_api_key=" . API_KEY . "&limit=" . $limit);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        if (stripos(" " . $output, "\"status\":true") > 0)
+            return json_decode("[" . $output . "]")[0];
+        else return NULL;
+    }
+
     public function get_aqmnews($keyword = "")
     {
         $ch = curl_init(API_URL . "aqmnews?trusur_api_key=" . API_KEY . "&k=" . $keyword);

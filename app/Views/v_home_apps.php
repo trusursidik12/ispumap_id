@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row h-100 align-items-center justify-content-center">
+            <div class="row align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
                     <div class="line" style="padding:0px;"></div>
                     <a href="https://play.google.com/store/apps/details?id=com.ispumap" target="_blank" class="btn sonar-btn white-btn">Download Apps</a>

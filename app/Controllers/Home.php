@@ -83,6 +83,7 @@ class Home extends BaseController
 		$data['aqmranks'][5] 					= ["param" => "no2", "label" => "NO2"];
 
 		$data['aqmispuall'] 					= $this->home->get_aqmispu_all();
+		$data['aqmnewstop'] 					= $this->home->get_aqmnewstop(6);
 
 
 
@@ -92,6 +93,7 @@ class Home extends BaseController
 		echo view('v_home_map');
 		echo view('v_home_apps');
 		echo view('v_home_ispu');
+		echo view('v_home_news');
 		echo view('v_home_contact');
 		echo view('v_footer');
 		echo view('v_home_js');
