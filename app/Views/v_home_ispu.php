@@ -19,7 +19,7 @@
     }
 </style>
 <!-- ***** Hero Area Start ***** -->
-<div id="ispu" class="hero-area d-flex align-items-center section-padding-100">
+<div id="ispu" class="hero-area d-flex align-items-center">
 
     <!-- Hero Content -->
     <div class="hero-content equalize">

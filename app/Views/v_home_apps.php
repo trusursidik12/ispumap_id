@@ -1,12 +1,13 @@
+<div id="apps" cass="section-padding-100"></div>
 <!-- ***** Apps Area Start ***** -->
-<div id="apps" class="section-padding-100 hero-area d-flex align-items-center">
+<div class="hero-area d-flex align-items-center">
     <!-- Back End Content -->
     <div class="backEnd-content">
         <img class="dots" src="<?= base_url(); ?>/img/core-img/dots.png" alt="" />
     </div>
 
     <!-- Hero Thumbnail -->
-    <div class="hero-thumbnail aboutUs equalize bg-img" style="background-image: url(<?= base_url(); ?>/img/bg_playstore.jpg)"></div>
+    <div onclick="window.open('https://play.google.com/store/apps/details?id=com.ispumap');" class="hero-thumbnail aboutUs equalize bg-img" style="cursor:pointer;background-image: url(<?= base_url(); ?>/img/bg_playstore.jpg)"></div>
 
     <!-- Hero Content -->
     <div class="hero-content aboutUs equalize">
