@@ -31,7 +31,7 @@
                                     $.get("<?= API_URL; ?>aqmdetailstasiunbyid?trusur_api_key=<?= API_KEY; ?>&id_stasiun=" + id_stasiun, function(aqmalldata) {
                                         if (aqmalldata.province != null) {
 
-                                            content[id_stasiun] = "<div class=\"single-hero-slide bg-img slide-background-overlay\" style=\"background-image: url(img/header/slide_" + aqmalldata.province.replace(" ", "_").replace(" ", "_").replace(" ", "_") + ".png);\">";
+                                            content[id_stasiun] = "<div class=\"single-hero-slide bg-img slide-background-overlay\" style=\"background-image: url(<?= base_url(); ?>/img/header/slide_" + aqmalldata.province.replace(" ", "_").replace(" ", "_").replace(" ", "_") + ".png);\">";
                                             content[id_stasiun] += " <div class=\"container h-100\" style=\"width:<?= ($_this->is_mobile()) ? "400;" : "600"; ?>px;\">";
                                             content[id_stasiun] += "    <div class=\"row h-100 align-items-end\">";
                                             content[id_stasiun] += "        <div class=\"col-12\">";
@@ -52,7 +52,7 @@
                                             content[id_stasiun] += "            <div class=\"awesome-weather-wrap awecf awe_wide temp7 awe_with_stats awe-code-802 awe-desc-scattered-clouds\" style=\" color: #ffffff; \">";
                                             content[id_stasiun] += "                <div class=\"row\">";
                                             content[id_stasiun] += "                    <div class=\"col-12\" style=\"font-size:16px;font-weight:bolder;display: flex;\">";
-                                            content[id_stasiun] += "                        <img style=\"height:30px;width:30px;\" src=\"img/ic_emote_" + aqmalldata.category.toLowerCase().replace(" ", "_").replace(" ", "_").replace(" ", "_") + ".png\">&nbsp;&nbsp;";
+                                            content[id_stasiun] += "                        <img style=\"height:30px;width:30px;\" src=\"<?= base_url(); ?>/img/ic_emote_" + aqmalldata.category.toLowerCase().replace(" ", "_").replace(" ", "_").replace(" ", "_") + ".png\">&nbsp;&nbsp;";
                                             content[id_stasiun] += "                        KATEGORI : " + aqmalldata.category;
                                             content[id_stasiun] += "                    </div>";
                                             content[id_stasiun] += "                </div>";
@@ -84,31 +84,31 @@
                                             content[id_stasiun] += "           </div>";
                                             content[id_stasiun] += "           <div class=\"awesome-weather-wrap awecf awe_wide temp7 awe_with_stats awe-code-802 awe-desc-scattered-clouds\" style=\"<?= ($_this->is_mobile()) ? "display:none;" : ""; ?>color: #ffffff; \">";
                                             content[id_stasiun] += "                <div class=\"row\">";
-                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"img/pressure.png\"></div>";
+                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure.png\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-3 btn\">" + (aqmalldata.pressure * 1) + " mBar</div>";
                                             content[id_stasiun] += "                    <div class=\"col-1\"></div>";
-                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"img/temparature.png\"></div>";
+                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/temparature.png\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-3 btn\">" + (aqmalldata.temperature * 1) + " &#176;C</div>";
                                             content[id_stasiun] += "                    <div class=\"col-1\"></div>";
                                             content[id_stasiun] += "                </div>";
                                             content[id_stasiun] += "                <div class=\"row\">";
-                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"img/wind_direction.png\"></div>";
+                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/wind_direction.png\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-3 btn\">" + (aqmalldata.wd * 1) + " &#176;</div>";
                                             content[id_stasiun] += "                    <div class=\"col-1\"></div>";
-                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"img/wind_speed.png\"></div>";
+                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/wind_speed.png\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-3 btn\">" + (aqmalldata.ws * 1) + " Km/h</div>";
                                             content[id_stasiun] += "                    <div class=\"col-1\"></div>";
                                             content[id_stasiun] += "                </div>";
                                             content[id_stasiun] += "                <div class=\"row\">";
-                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"img/humidity.png\"></div>";
+                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/humidity.png\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-3 btn\">" + (aqmalldata.humidity * 1) + " %</div>";
                                             content[id_stasiun] += "                    <div class=\"col-1\"></div>";
-                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"img/rain_rate.png\"></div>";
+                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/rain_rate.png\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-3 btn\">" + (aqmalldata.rain_intensity * 1) + " mm/jam</div>";
                                             content[id_stasiun] += "                    <div class=\"col-1\"></div>";
                                             content[id_stasiun] += "                </div>";
                                             content[id_stasiun] += "                <div class=\"row\">";
-                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"img/solar_radiation.png\"></div>";
+                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/solar_radiation.png\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-3 btn\">" + (aqmalldata.sr * 1) + " watt/m2</div>";
                                             content[id_stasiun] += "                    <div class=\"col-7\"></div>";
                                             content[id_stasiun] += "                </div>";

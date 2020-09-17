@@ -1,5 +1,4 @@
-<div class="section-padding-100"></div>
-<div class="section-padding-100" id="news">
+<div class="section-padding-100">
     <div class="container">
         <div class="row">
             <!-- Single Portfoio Area -->
@@ -46,18 +45,12 @@
                                         <!-- Search Widget -->
                                         <div class="ispu-form search-widget-area mb-50">
                                             <form action="news" method="get">
-                                                <input type="search" name="keyword" style="border: none !important;border-bottom: 1px solid !important;border-color: #c0c0c0 !important" placeholder="Search">
+                                                <input type="search" name="keyword" value="<?= $_GET["keyword"]; ?>" style="border: none !important;border-bottom: 1px solid !important;border-color: #c0c0c0 !important" placeholder="Search">
                                                 <button type="submit"><i class="ti-search"></i></button>
                                             </form>
                                         </div>
 
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                                    <a href="news" class="btn sonar-btn">Load More</a>
                                 </div>
                             </div>
                         </div>

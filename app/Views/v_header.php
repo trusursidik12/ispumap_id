@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicons -->
-    <link href="img/ispumap.png" rel="icon">
-    <link href="img/ispumap.png" rel="apple-touch-icon">
+    <link href="<?= base_url(); ?>/img/ispumap.png" rel="icon">
+    <link href="<?= base_url(); ?>/img/ispumap.png" rel="apple-touch-icon">
 
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -17,10 +17,10 @@
     <title>ISPUMAP.ID</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" href="<?= base_url(); ?>/img/favicon.ico">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/style.css">
     <style>
         .ispu-form .form-control {
             width: 100%;

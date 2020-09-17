@@ -6,7 +6,7 @@
     </div>
     <!-- Logo Area -->
     <div class="logo-area">
-        <a href="<?= base_url(); ?>/"><img style="max-height: 40px;" src="img/ispumap_logo.png"></a>
+        <a href="<?= base_url(); ?>/"><img style="max-height: 40px;" src="<?= base_url(); ?>/img/ispumap_logo.png"></a>
     </div>
     <!-- Nav -->
     <div class="sonarNav">
@@ -57,7 +57,7 @@
                 <div class="menu-area d-flex justify-content-between">
                     <!-- Logo Area  -->
                     <div class="logo-area">
-                        <a href="<?= base_url(); ?>/"><img style="max-height: 40px;" src="img/ispumap_logo.png"></a>
+                        <a href="<?= base_url(); ?>/"><img style="max-height: 40px;" src="<?= base_url(); ?>/img/ispumap_logo.png"></a>
                     </div>
                     <div class="menu-content-area d-flex align-items-center">
                         <span class="navbar-toggler-icon" id="menuIcon"></span>

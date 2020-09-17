@@ -100,6 +100,32 @@ class Home extends BaseController
 		echo view('v_home_js');
 	}
 
+	public function news($slug = "")
+	{
+		// $data["_this"] = $this;
+		if ($slug != "") {
+			$data['news'] = $this->home->get_aqmnews_slug($slug);
+			$limit = 6;
+		} else {
+			$data['news'] = null;
+			$limit = 30;
+		}
+		if (@$_GET["keyword"] == "")
+			$data['aqmnewstop'] = $this->home->get_aqmnewstop($limit);
+		else
+			$data['aqmnewstop'] = $this->home->get_aqmnews($_GET["keyword"]);
+
+
+		echo view('v_header', $data);
+		echo view('v_menu');
+		if ($data['news']) {
+			echo view('v_news_detail');
+			echo view('v_news_other');
+		} else
+			echo view('v_news');
+		echo view('v_footer');
+	}
+
 	//--------------------------------------------------------------------
 
 }

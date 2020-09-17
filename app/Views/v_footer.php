@@ -2,7 +2,7 @@
 <footer class="footer-area">
     <!-- back end content -->
     <div class="backEnd-content">
-        <img class="dots" src="img/core-img/dots.png" alt="">
+        <img class="dots" src="<?= base_url(); ?>/img/core-img/dots.png" alt="">
     </div>
 
     <div class="container">
@@ -25,15 +25,15 @@
 <!-- ***** Footer Area End ***** -->
 
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="<?= base_url(); ?>/js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
-<script src="js/popper.min.js"></script>
+<script src="<?= base_url(); ?>/js/popper.min.js"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<?= base_url(); ?>/js/bootstrap.min.js"></script>
 <!-- Plugins js -->
-<script src="js/plugins.js"></script>
+<script src="<?= base_url(); ?>/js/plugins.js"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="<?= base_url(); ?>/js/active.js"></script>
 
 </body>
 

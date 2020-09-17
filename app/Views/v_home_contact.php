@@ -9,7 +9,7 @@
             <div class="col-12">
                 <div class="ispu-form text-center call-to-action-content wow fadeInUp" data-wow-delay="0.5s">
                     <h5>Let’s talk</h5>
-                    <form action="#" method="post">
+                    <form method="post">
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <div class="form-group">

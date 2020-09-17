@@ -3,11 +3,11 @@
 <div id="apps" class="section-padding-100 hero-area d-flex align-items-center">
     <!-- Back End Content -->
     <div class="backEnd-content">
-        <img class="dots" src="img/core-img/dots.png" alt="" />
+        <img class="dots" src="<?= base_url(); ?>/img/core-img/dots.png" alt="" />
     </div>
 
     <!-- Hero Thumbnail -->
-    <div class="hero-thumbnail aboutUs equalize bg-img" style="background-image: url(img/bg_playstore.jpg)"></div>
+    <div class="hero-thumbnail aboutUs equalize bg-img" style="background-image: url(<?= base_url(); ?>/img/bg_playstore.jpg)"></div>
 
     <!-- Hero Content -->
     <div class="hero-content aboutUs equalize">

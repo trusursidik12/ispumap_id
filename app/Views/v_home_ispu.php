@@ -1,4 +1,4 @@
-<link href="css/design-table.css" rel="stylesheet">
+<link href="<?= base_url(); ?>/css/design-table.css" rel="stylesheet">
 <style>
     .nav-tabs .nav-link.active {
         font-weight: bold;
@@ -35,7 +35,7 @@
         </div>
     </div>
     <!-- Hero Thumbnail -->
-    <div class="hero-thumbnail equalize bg-img" style="background-image: url(img/clean_air.jpg);"></div>
+    <div class="hero-thumbnail equalize bg-img" style="background-image: url(<?= base_url(); ?>/img/clean_air.jpg);"></div>
 </div>
 <!-- ***** Hero Area End ***** -->
 <div class="section-padding-100" id="ispu_detail">
@@ -45,7 +45,7 @@
             <div class="col-12 col-md-10">
                 <div class="single-portfolio-item mt-100 portfolio-item-3 wow fadeIn">
                     <div class="backend-content">
-                        <img class="dots" src="img/core-img/dots.png" alt="" />
+                        <img class="dots" src="<?= base_url(); ?>/img/core-img/dots.png" alt="" />
                         <h2>ISPU</h2>
                     </div>
                     <div class="portfolio-meta">
