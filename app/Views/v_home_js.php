@@ -3,6 +3,9 @@
         $(document).ready(function() {
             try {
                 $(".ti-close").click();
+            } catch (ex) {}
+
+            try {
                 $('html, body').animate({
                     scrollTop: $('#' + area).offset().top
                 }, 1000);
