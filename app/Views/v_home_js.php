@@ -133,6 +133,7 @@
                                                     url: "http://maps.google.com/mapfiles/ms/icons/" + markercolor + "-dot.png"
                                                 }
                                             });
+                                            $("#map_loader").hide();
                                             google.maps.event.addListener(marker_[id_stasiun], "click", function(event) {
                                                 iw_map.setContent(content[id_stasiun]);
                                                 iw_map.open(map, this);

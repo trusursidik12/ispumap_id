@@ -1,4 +1,3 @@
-<div class="section-padding-100"></div>
 <!-- ***** Apps Area Start ***** -->
 <div id="apps" class="section-padding-100 hero-area d-flex align-items-center">
     <!-- Back End Content -->
