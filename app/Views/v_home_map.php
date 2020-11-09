@@ -6,63 +6,80 @@
                 -->
         <div class="col-lg-4 order-12 order-lg-1 my-2" id="mcard-container">
             <div class="mcard" id="mcard">
-                <b>Informasi Lokasi*</b>
-                <div class="isdivider"></div>
-                <div class="row">
-                    <div class="col" style="line-height: 1.2;">
-                        <p><b class="mcard-city" id="mcard-city" name="mcard-city">Jakarta</b></p>
-                        <a class="text-muted" style="font-size: 0.8rem;" id="mcard-address">Street Address</a><br>
-                        <a class="text-muted" style="font-size: 0.8rem;" id="mcard-last-update">revisi terakhir HH:MM DD:MM:YYYY</a>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-lokasi-tab" data-toggle="tab" href="#nav-lokasi" role="tab" aria-controls="nav-lokasi" aria-selected="true">Lokasi</a>
+                        <a class="nav-item nav-link" id="nav-ispu-tab" data-toggle="tab" href="#nav-ispu" role="tab" aria-controls="nav-ispu" aria-selected="false">ISPU</a>
+                        <a class="nav-item nav-link" id="nav-cuaca-tab" data-toggle="tab" href="#nav-cuaca" role="tab" aria-controls="nav-cuaca" aria-selected="false">Cuaca</a>
                     </div>
-                </div>
-                <div class="row align-items-center mt-2" style="text-align: center; line-height: 1.2; margin-bottom: 10px;">
-                    <div class="col">
-                        <div class="mcard-status" id="mcard-status" data-toggle="collapse" href="#mcard-ispu" role="button" aria-expanded="false" aria-controls="mcard-ispu">
-                            <h2 id="mcard-status-number" name="mcard-status-number">105</h2>
-                            <a id="mcard-status-flavor">No Data Available</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row collapse" id="mcard-ispu">
-                    <div class="col">
-                        <table class="table table-borderless mcard-rank-table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Parameter</th>
-                                    <th scope="col" style="text-align: right;">ISPU</th>
-                                </tr>
-                            </thead>
-                            <tbody id="mcard-ispu-body">
-                            </tbody>
-                        </table>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col mb-3">
-                        <p class="font-weight-bold">Rekomendasi</p>
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col" id="rec-1" style="display:none; max-width: 60px;">
-                                <img src="<?= base_url(); ?>/assets/is_rec_mask.svg"><br>
-                            </div>
-                            <div class="col" id="rec-2" style="display:none; max-width: 60px;">
-                                <img src="<?= base_url(); ?>/assets/is_rec_stay.svg">
-                            </div>
-                            <div class="col" id="rec-3" style="display:none; max-width: 60px;">
-                                <img src="<?= base_url(); ?>/assets/is_rec_ventilator.svg">
-                            </div>
-                            <div class="col" id="rec-4" style="display:none; max-width: 60px;">
-                                <img src="<?= base_url(); ?>/assets/is_rec_go_out.svg">
-                            </div>
-                            <div class="col" id="rekomen-flavor" style="font-size: 0.8rem;">
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <!--LOKASI-->
+                    <div class="tab-pane fade show active" id="nav-lokasi" role="tabpanel" aria-labelledby="nav-lokasi-tab">
+                        <div class="isdivider"></div>
+                        <div class="row">
+                            <div class="col" style="line-height: 1.2;">
+                                <p><b class="mcard-city" id="mcard-city" name="mcard-city">Jakarta</b></p>
+                                <a class="text-muted" style="font-size: 0.8rem;" id="mcard-address">Street Address</a><br>
+                                <a class="text-muted" style="font-size: 0.8rem;" id="mcard-last-update">revisi terakhir HH:MM DD:MM:YYYY</a>
                             </div>
                         </div>
+                        <div class="row align-items-center mt-2" style="text-align: center; line-height: 1.2; margin-bottom: 10px;">
+                            <div class="col">
+                                <div class="mcard-status" id="mcard-status" data-toggle="collapse" href="#mcard-ispu" role="button" aria-expanded="false" aria-controls="mcard-ispu">
+                                    <h2 id="mcard-status-number" name="mcard-status-number">105</h2>
+                                    <a id="mcard-status-flavor">No Data Available</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row collapse" id="mcard-ispu">
+                            <div class="col">
+                                <table class="table table-borderless mcard-rank-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Parameter</th>
+                                            <th scope="col" style="text-align: right;">ISPU</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="mcard-ispu-body">
+                                    </tbody>
+                                </table>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <p class="font-weight-bold">Rekomendasi</p>
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col" id="rec-1" style="display:none; max-width: 60px;">
+                                        <img src="<?= base_url(); ?>/assets/is_rec_mask.svg"><br>
+                                    </div>
+                                    <div class="col" id="rec-2" style="display:none; max-width: 60px;">
+                                        <img src="<?= base_url(); ?>/assets/is_rec_stay.svg">
+                                    </div>
+                                    <div class="col" id="rec-3" style="display:none; max-width: 60px;">
+                                        <img src="<?= base_url(); ?>/assets/is_rec_ventilator.svg">
+                                    </div>
+                                    <div class="col" id="rec-4" style="display:none; max-width: 60px;">
+                                        <img src="<?= base_url(); ?>/assets/is_rec_go_out.svg">
+                                    </div>
+                                    <div class="col" id="rekomen-flavor" style="font-size: 0.8rem;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-12">
-                        <button type="button" class="btn-ispu">Pelajari Lebih Lanjut</button>
+
+                    <!--ISPU-->
+                    <div class="tab-pane fade" id="nav-ispu" role="tabpanel" aria-labelledby="nav-ispu-tab">
+                        <div class="isdivider"></div>
+                        ISPU
+                    </div>
+
+                    <!--CUACA-->
+                    <div class="tab-pane fade" id="nav-cuaca" role="tabpanel" aria-labelledby="nav-cuaca-tab">
+                        <div class="isdivider"></div>
+                        Cuaca
                     </div>
                 </div>
             </div>

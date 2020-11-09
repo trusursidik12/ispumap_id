@@ -12,7 +12,7 @@
                 <a class="nav-link" style="color: rgb(242, 175, 13)" href="#">Tentang</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color: rgb(242, 175, 13)" href="<?= base_url(); ?>/ispumaps_publications.html">Pusat Pembelajaran</a>
+                <a class="nav-link" style="color: rgb(242, 175, 13)" href="#">Pusat Pembelajaran</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" style="color: rgb(242, 175, 13)" href="#">Solusi</a>

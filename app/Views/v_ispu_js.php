@@ -20,6 +20,14 @@
 <script>
     //Dynamic UI Updater
 
+    function getCssIspuCategory($ispu) {
+        if ($ispu <= 50) return "success";
+        else if ($ispu <= 100) return "primary";
+        else if ($ispu <= 199) return "warning";
+        else if ($ispu <= 299) return "danger";
+        else return "dark";
+    }
+
     //Activities Updater
     function up_mcard_status() {
         let a = $('#mcard-status-number').text();
@@ -147,6 +155,7 @@
                 circle_pm10: d.loc_pm10,
                 circle_so2: d.loc_so2,
                 circle_no2: d.loc_no2,
+                circle_o3: d.loc_o3,
                 circle_co: d.loc_co,
                 circle_up: d.loc_up
             });
@@ -156,9 +165,9 @@
                 $('#mcard-address').text(d.loc_name);
                 $('#mcard-status-number').text(d.loc_aq);
                 $('#mcard-last-update').text('Revisi terakhir ' + d.loc_up);
-                let a_a = ['PM 2.5', 'PM 10', 'SO2', 'NO2', 'CO'];
-                let a_a_a = [d.loc_pm25, d.loc_pm10, d.loc_so2, d.loc_no2, d.loc_co];
-                let a_a_a_a = ['pm25', 'pm10', 'so2', 'no2', 'co'];
+                let a_a = ['PM 2.5', 'PM 10', 'SO2', 'NO2', 'O3', 'CO'];
+                let a_a_a = [d.loc_pm25, d.loc_pm10, d.loc_so2, d.loc_no2, d.loc_o3, d.loc_co];
+                let a_a_a_a = ['pm25', 'pm10', 'so2', 'no2', 'o3', 'co'];
                 for (let a_b = 0; a_b < 5; a_b++) {
                     let a_c =
                         '<tr>' +
@@ -168,6 +177,36 @@
                     $('#mcard-ispu-body').append(a_c);
                 };
                 up_mcard_status();
+
+                var ispu = "<div class='isdivider'></div>";
+                ispu += "<div>";
+                ispu += "     <div class=\"row\"><div class=\"col\" style=\"line-height: 1.2;\"><p><b class=\"mcard-city\">" + d.loc_kabkot + "</b></p></div></div>";
+                ispu += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+                ispu += "         <div class=\"col-3 btn\">PM 10</div>";
+                ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(d.loc_pm10) + "\">" + d.loc_pm10 + "</div>";
+                ispu += "         <div class=\"col-1\"></div>";
+                ispu += "         <div class=\"col-3 btn\">PM 25</div>";
+                ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(d.loc_pm25) + "\">" + d.loc_pm25 + "</div>";
+                ispu += "         <div class=\"col-1\"></div>";
+                ispu += "     </div>";
+                ispu += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+                ispu += "         <div class=\"col-3 btn\">O3</div>";
+                ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(d.loc_o3) + "\">" + d.loc_o3 + "</div>";
+                ispu += "         <div class=\"col-1\"></div>";
+                ispu += "         <div class=\"col-3 btn\">SO2</div>";
+                ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(d.loc_so2) + "\">" + d.loc_so2 + "</div>";
+                ispu += "         <div class=\"col-1\"></div>";
+                ispu += "     </div>";
+                ispu += "     <div class=\"row\">";
+                ispu += "         <div class=\"col-3 btn\">NO2</div>";
+                ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(d.loc_no2) + "\">" + d.loc_no2 + "</div>";
+                ispu += "         <div class=\"col-1\"></div>";
+                ispu += "         <div class=\"col-3 btn\">CO</div>";
+                ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(d.loc_co) + "\">" + d.loc_co + "</div>";
+                ispu += "         <div class=\"col-1\"></div>";
+                ispu += "     </div>";
+                ispu += "</div>";
+                $("#nav-ispu").html(ispu);
             };
             dd.on('click', u_loc);
             f = {
@@ -304,6 +343,7 @@
 
     //update location when circles are clicked
     function u_loc(e) {
+        console.log(e);
         $('#mcard-city').text(e.target.options.circle_city);
         $('#mcard-address').text(e.target.options.circle_add);
         $('#mcard-status-number').text(e.target.options.circle_aq);
@@ -312,6 +352,7 @@
         $('#mcard-ispu-row-pm10').text(e.target.options.circle_pm10);
         $('#mcard-ispu-row-so2').text(e.target.options.circle_so2);
         $('#mcard-ispu-row-no2').text(e.target.options.circle_no2);
+        $('#mcard-ispu-row-o3').text(e.target.options.circle_o3);
         $('#mcard-ispu-row-co').text(e.target.options.circle_co);
         up_mcard_status();
         //scrolly scroll to the thingy
@@ -320,7 +361,40 @@
             },
             250,
             'linear'
-        )
+        );
+        $("#nav-lokasi-tab").click();
+
+
+        var ispu = "<div class='isdivider'></div>";
+        ispu += "<div>";
+        ispu += "     <div class=\"row\"><div class=\"col\" style=\"line-height: 1.2;\"><p><b class=\"mcard-city\">" + e.target.options.circle_city + "</b></p></div></div>";
+        ispu += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+        ispu += "         <div class=\"col-3 btn\">PM 10</div>";
+        ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(e.target.options.circle_pm10) + "\">" + e.target.options.circle_pm10 + "</div>";
+        ispu += "         <div class=\"col-1\"></div>";
+        ispu += "         <div class=\"col-3 btn\">PM 25</div>";
+        ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(e.target.options.circle_pm25) + "\">" + e.target.options.circle_pm25 + "</div>";
+        ispu += "         <div class=\"col-1\"></div>";
+        ispu += "     </div>";
+        ispu += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+        ispu += "         <div class=\"col-3 btn\">O3</div>";
+        ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(e.target.options.circle_o3) + "\">" + e.target.options.circle_o3 + "</div>";
+        ispu += "         <div class=\"col-1\"></div>";
+        ispu += "         <div class=\"col-3 btn\">SO2</div>";
+        ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(e.target.options.circle_so2) + "\">" + e.target.options.circle_so2 + "</div>";
+        ispu += "         <div class=\"col-1\"></div>";
+        ispu += "     </div>";
+        ispu += "     <div class=\"row\">";
+        ispu += "         <div class=\"col-3 btn\">NO2</div>";
+        ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(e.target.options.circle_no2) + "\">" + e.target.options.circle_no2 + "</div>";
+        ispu += "         <div class=\"col-1\"></div>";
+        ispu += "         <div class=\"col-3 btn\">CO</div>";
+        ispu += "         <div class=\"col-2 btn btn-" + getCssIspuCategory(e.target.options.circle_co) + "\">" + e.target.options.circle_co + "</div>";
+        ispu += "         <div class=\"col-1\"></div>";
+        ispu += "     </div>";
+        ispu += "</div>";
+        $("#nav-ispu").html(ispu);
+
     }
 
     //go to current location
@@ -367,7 +441,7 @@
                     f = f[0]; //pick the first result by default
                     //color engine and ISPU finder
                     g = [];
-                    g.push(Number(f.pm25), Number(f.pm10), Number(f.co), Number(f.so2), Number(f.no2));
+                    g.push(Number(f.pm25), Number(f.pm10), Number(f.co), Number(f.so2), Number(f.no2), Number(f.o3));
                     let gg = Math.max(...g);
                     switch (true) {
                         case (gg <= 50):
@@ -399,6 +473,7 @@
                             loc_co: Number(f.co),
                             loc_so2: Number(f.so2),
                             loc_no2: Number(f.no2),
+                            loc_o3: Number(f.o3),
                             loc_col: hh,
                             loc_kabkot: value.kota
                             //add weather information here --> need api
