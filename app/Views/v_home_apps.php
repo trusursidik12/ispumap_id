@@ -1,31 +1,36 @@
-<div id="apps" cass="section-padding-100"></div>
-<!-- ***** Apps Area Start ***** -->
-<div class="hero-area d-flex align-items-center">
-    <!-- Back End Content -->
-    <div class="backEnd-content">
-        <img class="dots" src="<?= base_url(); ?>/img/core-img/dots.png" alt="" />
+<!--Tech Behind ISPUmaps-->
+<div class="container container-fluid is-big-space">
+    <div class="row drow align-items-center my-3">
+        <div class="col-md-6 col-12 my-3" style="text-align: center;">
+            <img src="<?= base_url(); ?>/assets/ispumaps_how.svg" style="max-height: 300px;">
+        </div>
+        <div class="col my-3">
+            <h2 style="color: rgb(0, 27, 53)">
+                Teknologi Kami untuk Meningkatkan Mutu Informasi Kualitas Udara
+            </h2>
+            <div class="isdivider"></div>
+            <p style="font-size: 1.2rem;">
+                <a class="font-italic font-weight-bold">Advanced Algorithm</a> kami menggabungkan data dari satelit
+                beserta data dari sensor-sensor mitra kami untuk memperoleh
+                informasi kualitas udara yang komprehensif.
+            </p>
+            <hr>
+            <button type="button" class="btn-ispu">Pelajari Lebih Lanjut</button>
+        </div>
     </div>
-
-    <!-- Hero Thumbnail -->
-    <div onclick="window.open('https://play.google.com/store/apps/details?id=com.ispumap');" class="hero-thumbnail aboutUs equalize bg-img" style="cursor:pointer;background-image: url(<?= base_url(); ?>/img/bg_playstore.jpg)"></div>
-
-    <!-- Hero Content -->
-    <div class="hero-content aboutUs equalize">
-        <div class="container-fluid h-100">
-            <div class="row">
-                <div class="col-12">
-                    <div class="portfolio-title">
-                        <h2>“Kini kamu bisa mengetahui polusi udara disekitarmu, ayo download aplikasi Ispumap.id”</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-md-10">
-                    <div class="line" style="padding:0px;"></div>
-                    <a href="https://play.google.com/store/apps/details?id=com.ispumap" target="_blank" class="btn sonar-btn white-btn">Download Apps</a>
-                </div>
-            </div>
+    <div class="row drow align-items-center mt-md-5">
+        <div class="col-md-6 col-12 my-3">
+            <h2 style="color: rgb(0, 27, 53)">Informasi di Tangan Anda</h2>
+            <div class="isdivider"></div>
+            <p style="font-size: 1.2rem;">
+                Unduh aplikasi ISPUMAP di HP Anda untuk mendapatkan informasi yang lebih
+                <a class="font-italic">personalized</a> sesuai dengan kebutuhan unik anda.
+            </p>
+            <hr>
+            <button type="button" class="btn-ispu">Unduh Sekarang</button>
+        </div>
+        <div class="col-12 col-md-6 my-3">
+            <img src="<?= base_url(); ?>/assets/ispumaps_apps.png" style="width: 100%;">
         </div>
     </div>
 </div>
-<!-- ***** Apps Area End ***** -->
