@@ -207,6 +207,44 @@
                 ispu += "     </div>";
                 ispu += "</div>";
                 $("#nav-ispu").html(ispu);
+
+                $("#nav-cuaca").html("Loading ...");
+                $.get("<?= API_URL; ?>aqmdetailstasiunbyid?trusur_api_key=<?= API_KEY; ?>&id_stasiun=" + d.st_id, function(aqmalldata) {
+                    var weather = "<div class='isdivider'></div>";
+                    weather += "<div>";
+                    weather += "     <div class=\"row\"><div class=\"col\" style=\"line-height: 1.2;\"><p><b class=\"mcard-city\">" + d.loc_kabkot + "</b></p></div></div>";
+                    weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure.png\"></div>";
+                    weather += "         <div class=\"col-3 btn\">" + (aqmalldata.pressure * 1) + " mBar</div>";
+                    weather += "         <div class=\"col-1\"></div>";
+                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/temparature.png\"></div>";
+                    weather += "         <div class=\"col-3 btn\">" + (aqmalldata.temperature * 1) + " &#176;C</div>";
+                    weather += "         <div class=\"col-1\"></div>";
+                    weather += "     </div>";
+                    weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/wind_direction.png\"></div>";
+                    weather += "         <div class=\"col-3 btn\">" + (aqmalldata.wind_direction * 1) + " &#176;</div>";
+                    weather += "         <div class=\"col-1\"></div>";
+                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/wind_speed.png\"></div>";
+                    weather += "         <div class=\"col-3 btn\">" + (aqmalldata.wind_speed * 1) + " Km/h</div>";
+                    weather += "         <div class=\"col-1\"></div>";
+                    weather += "     </div>";
+                    weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/humidity.png\"></div>";
+                    weather += "         <div class=\"col-3 btn\">" + (aqmalldata.humidity * 1) + " %</div>";
+                    weather += "         <div class=\"col-1\"></div>";
+                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/rain_rate.png\"></div>";
+                    weather += "         <div class=\"col-3 btn\">" + (aqmalldata.rain_rate * 1) + " mm/jam</div>";
+                    weather += "         <div class=\"col-1\"></div>";
+                    weather += "     </div>";
+                    weather += "     <div class=\"row\">";
+                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/solar_radiation.png\"></div>";
+                    weather += "         <div class=\"col-3 btn\">" + (aqmalldata.solar_radiation * 1) + " watt/m2</div>";
+                    weather += "         <div class=\"col-7\"></div>";
+                    weather += "     </div>";
+                    weather += "</div>";
+                    $("#nav-cuaca").html(weather);
+                });
             };
             dd.on('click', u_loc);
             f = {
@@ -343,7 +381,6 @@
 
     //update location when circles are clicked
     function u_loc(e) {
-        console.log(e);
         $('#mcard-city').text(e.target.options.circle_city);
         $('#mcard-address').text(e.target.options.circle_add);
         $('#mcard-status-number').text(e.target.options.circle_aq);
@@ -362,8 +399,6 @@
             250,
             'linear'
         );
-        $("#nav-lokasi-tab").click();
-
 
         var ispu = "<div class='isdivider'></div>";
         ispu += "<div>";
@@ -394,6 +429,44 @@
         ispu += "     </div>";
         ispu += "</div>";
         $("#nav-ispu").html(ispu);
+
+        $("#nav-cuaca").html("Loading ...");
+        $.get("<?= API_URL; ?>aqmdetailstasiunbyid?trusur_api_key=<?= API_KEY; ?>&id_stasiun=" + e.target.options.circle_id, function(aqmalldata) {
+            var weather = "<div class='isdivider'></div>";
+            weather += "<div>";
+            weather += "     <div class=\"row\"><div class=\"col\" style=\"line-height: 1.2;\"><p><b class=\"mcard-city\">" + e.target.options.circle_city + "</b></p></div></div>";
+            weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure.png\"></div>";
+            weather += "         <div class=\"col-3 btn\">" + (aqmalldata.pressure * 1) + " mBar</div>";
+            weather += "         <div class=\"col-1\"></div>";
+            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/temparature.png\"></div>";
+            weather += "         <div class=\"col-3 btn\">" + (aqmalldata.temperature * 1) + " &#176;C</div>";
+            weather += "         <div class=\"col-1\"></div>";
+            weather += "     </div>";
+            weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/wind_direction.png\"></div>";
+            weather += "         <div class=\"col-3 btn\">" + (aqmalldata.wind_direction * 1) + " &#176;</div>";
+            weather += "         <div class=\"col-1\"></div>";
+            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/wind_speed.png\"></div>";
+            weather += "         <div class=\"col-3 btn\">" + (aqmalldata.wind_speed * 1) + " Km/h</div>";
+            weather += "         <div class=\"col-1\"></div>";
+            weather += "     </div>";
+            weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
+            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/humidity.png\"></div>";
+            weather += "         <div class=\"col-3 btn\">" + (aqmalldata.humidity * 1) + " %</div>";
+            weather += "         <div class=\"col-1\"></div>";
+            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/rain_rate.png\"></div>";
+            weather += "         <div class=\"col-3 btn\">" + (aqmalldata.rain_rate * 1) + " mm/jam</div>";
+            weather += "         <div class=\"col-1\"></div>";
+            weather += "     </div>";
+            weather += "     <div class=\"row\">";
+            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/solar_radiation.png\"></div>";
+            weather += "         <div class=\"col-3 btn\">" + (aqmalldata.solar_radiation * 1) + " watt/m2</div>";
+            weather += "         <div class=\"col-7\"></div>";
+            weather += "     </div>";
+            weather += "</div>";
+            $("#nav-cuaca").html(weather);
+        });
 
     }
 
