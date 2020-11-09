@@ -1,5 +1,5 @@
 <!--Carousel & Top 5 Ranking Row-->
-<div class="container container-fluid my-md-5" style="max-width: 100%;">
+<div class="rightdots container container-fluid my-md-5" style="max-width: 100%;">
     <div class="row drow">
         <div class="col h-100 my-2">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

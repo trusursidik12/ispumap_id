@@ -1,222 +1,254 @@
-.ispunav{
-    min-height: 60px;
-    background-color:white;
-    padding-left:30px;
-    padding-right:30px;
-    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.11);
+.ispunav {
+  min-height: 60px;
+  background-color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.11);
 }
-.maincont{
-    background-image: url('/Assets/ispumaps_dots.png');
-    background-repeat: no-repeat;
-    background-position: right;
+.maincont {
+  background-image: url("/assets/ispumaps_dots.png");
+  background-repeat: no-repeat;
+  background-position: right;
 }
-.drow{
-    margin-left: 0px;
-    margin-right: 0px;
+.leftdots {
+  background-image: url("/assets/ispumaps_dots.png");
+  background-repeat: no-repeat;
+  background-position: left;
 }
-.scontainer{
-    position: absolute;
-    left: 0px;
-    z-index: 50;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    width: 100%;
-    display: flex;
-    padding-top: 20px;
+.rightdots {
+  background-image: url("/assets/ispumaps_dots.png");
+  background-repeat: no-repeat;
+  background-position: right;
 }
-.srow{
-    background-color: white;
-    width: 80%;
-    border-radius: 5px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.11);
+.drow {
+  margin-left: 0px;
+  margin-right: 0px;
 }
-.mcard{
-    background-color: white;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.11);
-    transition: all 200ms;
+.scontainer {
+  position: absolute;
+  left: 0px;
+  z-index: 50;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  padding-top: 20px;
 }
-.srow-container{
-    margin: auto;
-    width: 90%;
-    height: 30px;
-    text-align: center;
-    border-radius: 10px;
+.srow {
+  background-color: white;
+  width: 80%;
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.11);
 }
-.gradscale{
-    background: rgb(0,0,0);
-    background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(166,9,9,1) 25%, rgba(245,106,13,1) 50%, rgba(25,60,227,1) 75%, rgba(25,227,45,1) 100%);
-    height: 10px;
-    margin-top: 10px;
+.mcard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.11);
+  transition: all 200ms;
 }
-.sbutton{
-    width: 100%;
-    border-radius:0px;
-    border: none;
-    background-color: transparent;
+.srow-container {
+  margin: auto;
+  width: 90%;
+  height: 30px;
+  text-align: center;
+  border-radius: 10px;
 }
-.definput{
-    border: none;
-    background-color:transparent;
-    width: 100%;
+.gradscale {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(166, 9, 9, 1) 25%,
+    rgba(245, 106, 13, 1) 50%,
+    rgba(25, 60, 227, 1) 75%,
+    rgba(25, 227, 45, 1) 100%
+  );
+  height: 10px;
+  margin-top: 10px;
 }
-.btn-ispu{
-    transition: background-color 0.5s ease;
-    background-color: rgb(0, 27, 53);
-    border-radius: 20px;
-    border: 0px;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+.sbutton {
+  width: 100%;
+  border-radius: 0px;
+  border: none;
+  background-color: transparent;
 }
-.btn-ispu:hover{
-    color: white;
-    background-color: rgb(242, 175, 13);
+.definput {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+.btn-ispu {
+  transition: background-color 0.5s ease;
+  background-color: rgb(0, 27, 53);
+  border-radius: 20px;
+  border: 0px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.btn-ispu:hover {
+  color: white;
+  background-color: rgb(242, 175, 13);
 }
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
-.mapcont{
-    height: 512px;
-    background-color:blue;
+.mapcont {
+  height: 512px;
+  background-color: blue;
 }
-.isdivider{
-    width: 26px;
-    height: 3px;
-    background-color: rgb(242, 175, 13);
-    margin-bottom: 8px;
-    margin-top: 4px;
+.isdivider {
+  width: 26px;
+  height: 3px;
+  background-color: rgb(242, 175, 13);
+  margin-bottom: 8px;
+  margin-top: 4px;
 }
-.mcard-status{
-    width: 100%;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: white;
-    min-height: 100px;
-    background-image: url('/Assets/islogo-clouds.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: all 200ms;
+.mcard-status {
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  min-height: 100px;
+  background-image: url("/Assets/islogo-clouds.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 200ms;
 }
-.mcard-status:hover{
-    box-shadow: 0 0px 0px 0 rgba(242, 175, 13, 0.5), 0 0px 10px 2px rgba(242, 175, 13, 1);
-    transition: all 200ms;
+.mcard-status:hover {
+  box-shadow: 0 0px 0px 0 rgba(242, 175, 13, 0.5),
+    0 0px 10px 2px rgba(242, 175, 13, 1);
+  transition: all 200ms;
 }
-.mcard-city{
-    font-size: 1.5rem;
+.mcard-city {
+  font-size: 1.5rem;
 }
-.mcard-rank-table{
-    font-size: 0.8rem;
-    margin-bottom: 10px;
+.mcard-rank-table {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
 }
-.mcard-rank-table td:last-child{
-    text-align: right;
+.mcard-rank-table td:last-child {
+  text-align: right;
 }
-.mcard-btn:hover{
-    margin-top:-5px;
-    box-shadow: 0 0px 2px 0 rgba(242, 175, 13, 0.5), 0 2px 2px 0 rgba(242, 175, 13, 1);
-    transition: all 200ms;
+.mcard-btn:hover {
+  margin-top: -5px;
+  box-shadow: 0 0px 2px 0 rgba(242, 175, 13, 0.5),
+    0 2px 2px 0 rgba(242, 175, 13, 1);
+  transition: all 200ms;
 }
-.ispu-explainer{
-    max-width:100%;
-    background-color: rgb(0, 27, 53);
-    background-image: url('/Assets/wave.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+.ispu-explainer {
+  max-width: 100%;
+  background-color: rgb(0, 27, 53);
+  background-image: url("/Assets/wave.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
-.rank-aq{
-    font-weight: bold;
-    color: red;
+.rank-aq {
+  font-weight: bold;
+  color: red;
 }
-.is-big-space{
-    padding-top: 50px;
-    padding-bottom: 50px;
+.is-big-space {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
-.is-solutions{
-    max-width: 100%;
-    margin-top: 40px;
-    background-color: rgb(0, 27, 53);
-    color: white;
-    background-image: url('/Assets/wave.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+.is-solutions {
+  max-width: 100%;
+  margin-top: 40px;
+  background-color: rgb(0, 27, 53);
+  color: white;
+  background-image: url("/Assets/wave.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
 /* open-sans-regular - latin */
 @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/Assets/fonts/open-sans-v18-latin-regular.eot'); /* IE9 Compat Modes */
-    src: local('Open Sans Regular'), local('OpenSans-Regular'),
-         url('/Assets/fonts/open-sans-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('/Assets/fonts/open-sans-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('/Assets/fonts/open-sans-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
-         url('/Assets/fonts/open-sans-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('/Assets/fonts/open-sans-v18-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Assets/fonts/open-sans-v18-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url("/Assets/fonts/open-sans-v18-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/Assets/fonts/open-sans-v18-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/Assets/fonts/open-sans-v18-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("/Assets/fonts/open-sans-v18-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/Assets/fonts/open-sans-v18-latin-regular.svg#OpenSans")
+      format("svg"); /* Legacy iOS */
 }
 /* rubik-regular - latin */
 @font-face {
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/Assets/fonts/rubik-v11-latin-regular.eot'); /* IE9 Compat Modes */
-    src: local(''),
-         url('/Assets/fonts/rubik-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('/Assets/fonts/rubik-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('/Assets/fonts/rubik-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
-         url('/Assets/fonts/rubik-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('/Assets/fonts/rubik-v11-latin-regular.svg#Rubik') format('svg'); /* Legacy iOS */
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Assets/fonts/rubik-v11-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/Assets/fonts/rubik-v11-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/Assets/fonts/rubik-v11-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/Assets/fonts/rubik-v11-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("/Assets/fonts/rubik-v11-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/Assets/fonts/rubik-v11-latin-regular.svg#Rubik") format("svg"); /* Legacy iOS */
 }
-body{
-    font-family: 'Open Sans';
+body {
+  font-family: "Open Sans";
 }
-h2, h3, h1{
-    font-family: 'Rubik';
-    font-weight: bolder;
+h2,
+h3,
+h1 {
+  font-family: "Rubik";
+  font-weight: bolder;
 }
 /*for cluster pionts*/
-.mclus{
-    text-align: center;
-    border-radius: 20px;
-    padding: 10px 0;
-    color: white;
+.mclus {
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 0;
+  color: white;
 }
-.mclus-01{
-    background-color: #19e32d;
-    background-color: rgba(25,227,45,0.4);
-    box-shadow: 0px 0px 0px 8px rgba(25,227,45,0.2);
+.mclus-01 {
+  background-color: #19e32d;
+  background-color: rgba(25, 227, 45, 0.4);
+  box-shadow: 0px 0px 0px 8px rgba(25, 227, 45, 0.2);
 }
-.mclus-02{
-    background-color: #193ce3;
-    background-color: rgba(25,60,227,0.4);
-    box-shadow: 0px 0px 0px 8px rgba(25,60,227,0.2);
+.mclus-02 {
+  background-color: #193ce3;
+  background-color: rgba(25, 60, 227, 0.4);
+  box-shadow: 0px 0px 0px 8px rgba(25, 60, 227, 0.2);
 }
-.mclus-03{
-    background-color: #f56a0d;
-    background-color: rgba(245,106,13,0.4);
-    box-shadow: 0px 0px 0px 8px rgba(245,106,13,0.2);
+.mclus-03 {
+  background-color: #f56a0d;
+  background-color: rgba(245, 106, 13, 0.4);
+  box-shadow: 0px 0px 0px 8px rgba(245, 106, 13, 0.2);
 }
-.mclus-04{
-    background-color: #a60909;
-    background-color: rgba(166,9,9,0.4);
-    box-shadow: 0px 0px 0px 8px rgba(166,9,9,0.2);
+.mclus-04 {
+  background-color: #a60909;
+  background-color: rgba(166, 9, 9, 0.4);
+  box-shadow: 0px 0px 0px 8px rgba(166, 9, 9, 0.2);
 }
-.mclus-05{
-    background-color: #000000;
-    background-color: rgba(0,0,0,0.4);
-    box-shadow: 0px 0px 0px 8px rgba(0,0,0,0.2);
+.mclus-05 {
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.2);
 }

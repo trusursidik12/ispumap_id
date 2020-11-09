@@ -24,6 +24,10 @@ class BaseController extends Controller
 	public function __construct()
 	{
 		$this->session = \Config\Services::session();
+		define('API_KEY', getenv('API_KEY'));
+		define('LEAFLET_CSS_INTEGRITY', getenv('LEAFLET_CSS_INTEGRITY'));
+		define('LEAFLET_JS_INTEGRITY', getenv('LEAFLET_JS_INTEGRITY'));
+		define('GOOGLE_API_KEY', getenv('GOOGLE_API_KEY'));
 	}
 	/**
 	 * An array of helpers to be loaded automatically upon

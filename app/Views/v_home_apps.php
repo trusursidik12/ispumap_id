@@ -1,5 +1,5 @@
 <!--Tech Behind ISPUmaps-->
-<div class="container container-fluid is-big-space">
+<div class="rightdots container container-fluid is-big-space">
     <div class="row drow align-items-center my-3">
         <div class="col-md-6 col-12 my-3" style="text-align: center;">
             <img src="<?= base_url(); ?>/assets/ispumaps_how.svg" style="max-height: 300px;">

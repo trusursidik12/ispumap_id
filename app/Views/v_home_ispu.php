@@ -1,5 +1,5 @@
 <!--Explaining ISPU-->
-<div class="container container-fluid ispu-explainer is-big-space" style="margin-top: 50px">
+<div class="leftdots container container-fluid ispu-explainer is-big-space" style="margin-top: 50px">
     <div class="row my-3 drow" style="text-align: center;">
         <div class="col text-light">
             <h3>Pengertian Indeks Standar Pencemaran Udara (ISPU)</h3>

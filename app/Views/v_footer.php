@@ -1,5 +1,5 @@
 <footer class="footer text-muted" style="background-color:white">
-    <div class="container-fluid p-5 mt-5" style="font-size: 0.8rem;">
+    <div class="leftdots container-fluid p-5 mt-5" style="font-size: 0.8rem;">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="row">

@@ -1,5 +1,5 @@
 <!--Our Solutions-->
-<div class="container container-fluid is-big-space is-solutions">
+<div class="leftdots container container-fluid is-big-space is-solutions">
     <div class="row" style="text-align: center;">
         <div class="col">
             <h2>Solusi Kami: Leveraging Information</h2>
