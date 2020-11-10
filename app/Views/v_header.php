@@ -20,7 +20,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="">
     </script>
     <script src="<?= base_url(); ?>/js/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="<?= base_url(); ?>/css/ispumaps_stylesheet.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/ispumaps_stylesheet.css">
     <style>
         .ispu-form .form-control {
             width: 100%;
