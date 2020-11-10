@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>/css/leaflet.css" integrity="<?= LEAFLET_CSS_INTEGRITY ?>" crossorigin="" />
     <script src="<?= base_url(); ?>/js/leaflet.js" integrity="<?= LEAFLET_JS_INTEGRITY ?>" crossorigin=""></script>
+    <script src="<?= base_url(); ?>/js/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="<?= base_url(); ?>/css/ispumaps_stylesheet.css">
     <style>
         .ispu-form .form-control {
