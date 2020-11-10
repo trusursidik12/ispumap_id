@@ -544,6 +544,7 @@
             wr_color[3] = "rgb(128,203,196)";
 
             $.get("<?= API_URL; ?>aqmwindrosebyid?trusur_api_key=<?= API_KEY; ?>&id_stasiun=" + e.target.options.circle_id, function(winds) {
+                console.log(winds);
                 var wr_data = [];
                 if (winds.data.length > 0) {
                     for (var i = 0; i < winds.data.length; i++) {
