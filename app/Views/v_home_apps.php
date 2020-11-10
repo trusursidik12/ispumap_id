@@ -27,7 +27,7 @@
                 <a class="font-italic">personalized</a> sesuai dengan kebutuhan unik anda.
             </p>
             <hr>
-            <button type="button" class="btn-ispu">Unduh Sekarang</button>
+            <button type="button" class="btn-ispu" onclick="window.open('https://play.google.com/store/apps/details?id=com.ispumap');">Unduh Sekarang</button>
         </div>
         <div class="col-12 col-md-6 my-3">
             <img src="<?= base_url(); ?>/assets/ispumaps_apps.png" style="width: 100%;">
