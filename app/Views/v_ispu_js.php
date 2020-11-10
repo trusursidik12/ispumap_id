@@ -237,13 +237,73 @@
                     weather += "         <div class=\"col-3 btn\">" + (aqmalldata.rain_rate * 1) + " mm/jam</div>";
                     weather += "         <div class=\"col-1\"></div>";
                     weather += "     </div>";
-                    weather += "     <div class=\"row\">";
+                    weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
                     weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/solar_radiation.png\"></div>";
                     weather += "         <div class=\"col-3 btn\">" + (aqmalldata.solar_radiation * 1) + " watt/m2</div>";
                     weather += "         <div class=\"col-7\"></div>";
                     weather += "     </div>";
+                    weather += "     <div class=\"row\">";
+                    weather += "        <div id='wrDiv' style='width:500px;'></div>";
+                    weather += "     </div>";
                     weather += "</div>";
                     $("#nav-cuaca").html(weather);
+
+                    var wr_directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+                    var wr_arr = [];
+                    var wr_caption = [];
+                    var wr_color = [];
+                    wr_caption[0] = "> 10 m/s";
+                    wr_caption[1] = "6-10 m/s";
+                    wr_caption[2] = "3-6 m/s";
+                    wr_caption[3] = "< 3 m/s";
+                    wr_color[0] = "rgb(255,112,67)";
+                    wr_color[1] = "rgb(255,241,118)";
+                    wr_color[2] = "rgb(174,213,129)";
+                    wr_color[3] = "rgb(128,203,196)";
+
+                    $.get("<?= API_URL; ?>aqmwindrosebyid?trusur_api_key=<?= API_KEY; ?>&id_stasiun=" + d.st_id, function(winds) {
+                        console.log(winds);
+                        var wr_data = [];
+                        if (winds.data.length > 0) {
+                            for (var i = 0; i < winds.data.length; i++) {
+                                wr_feed = {
+                                    r: winds.data[i],
+                                    theta: wr_directions,
+                                    name: wr_caption[i],
+                                    marker: {
+                                        color: wr_color[i]
+                                    },
+                                    type: "barpolar"
+                                };
+                                wr_data.push(wr_feed);
+                            }
+
+                            var wr_layout = {
+                                title: "",
+                                font: {
+                                    size: 16
+                                },
+                                legend: {
+                                    font: {
+                                        size: 16
+                                    }
+                                },
+                                polar: {
+                                    barmode: "overlay",
+                                    Xbargap: 0,
+                                    radialaxis: {
+                                        ticksuffix: "%",
+                                        angle: 45,
+                                        dtick: 2
+                                    },
+                                    angularaxis: {
+                                        direction: "clockwise"
+                                    }
+                                }
+                            }
+                            Plotly.newPlot("wrDiv", wr_data, wr_layout);
+                        }
+                    });
                 });
             };
             dd.on('click', u_loc);
@@ -484,8 +544,6 @@
             wr_color[3] = "rgb(128,203,196)";
 
             $.get("<?= API_URL; ?>aqmwindrosebyid?trusur_api_key=<?= API_KEY; ?>&id_stasiun=" + e.target.options.circle_id, function(winds) {
-                console.log(e.target.options.circle_id);
-                console.log(winds);
                 var wr_data = [];
                 if (winds.data.length > 0) {
                     for (var i = 0; i < winds.data.length; i++) {
