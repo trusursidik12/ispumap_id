@@ -214,7 +214,7 @@
                     weather += "<div>";
                     weather += "     <div class=\"row\"><div class=\"col\" style=\"line-height: 1.2;\"><p><b class=\"mcard-city\">" + d.loc_kabkot + "</b></p></div></div>";
                     weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
-                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure.png\"></div>";
+                    weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure2.png\"></div>";
                     weather += "         <div class=\"col-3 btn\">" + (aqmalldata.pressure * 1) + " mBar</div>";
                     weather += "         <div class=\"col-1\"></div>";
                     weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/temparature.png\"></div>";
@@ -496,7 +496,7 @@
             weather += "<div>";
             weather += "     <div class=\"row\"><div class=\"col\" style=\"line-height: 1.2;\"><p><b class=\"mcard-city\">" + e.target.options.circle_city + "</b></p></div></div>";
             weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
-            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure.png\"></div>";
+            weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure2.png\"></div>";
             weather += "         <div class=\"col-3 btn\">" + (aqmalldata.pressure * 1) + " mBar</div>";
             weather += "         <div class=\"col-1\"></div>";
             weather += "         <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/temparature.png\"></div>";

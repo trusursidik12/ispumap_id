@@ -87,7 +87,7 @@
                                             content[id_stasiun] += "           </div>";
                                             content[id_stasiun] += "           <div class=\"awesome-weather-wrap awecf awe_wide temp7 awe_with_stats awe-code-802 awe-desc-scattered-clouds\" style=\"<?= ($_this->is_mobile()) ? "display:none;" : ""; ?>color: #ffffff; \">";
                                             content[id_stasiun] += "                <div class=\"row\">";
-                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure.png\"></div>";
+                                            content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/pressure2.png\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-3 btn\">" + (aqmalldata.pressure * 1) + " mBar</div>";
                                             content[id_stasiun] += "                    <div class=\"col-1\"></div>";
                                             content[id_stasiun] += "                    <div class=\"col-2\"><img style=\"height:40px;width:40px;\" src=\"<?= base_url(); ?>/img/temparature.png\"></div>";
