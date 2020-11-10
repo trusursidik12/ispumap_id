@@ -45,7 +45,7 @@
 
                             <div class="awesome-weather-wrap awecf awe_wide temp7 awe_with_stats awe-code-802 awe-desc-scattered-clouds" style="<?= ($_this->is_mobile()) ? "display:none;" : ""; ?>color: #ffffff; ">
                                 <div class="row">
-                                    <div class="col-2"><img style="height:30px;width:40px;" src="<?= base_url(); ?>/img/pressure.png"></div>
+                                    <div class="col-2"><img style="height:30px;width:40px;" src="<?= base_url(); ?>/img/pressure2.png"></div>
                                     <div class="col-3 btn"><?= ($province["data"]->pressure) ? $province["data"]->pressure : "0"; ?> mBar</div>
                                     <div class="col-1"></div>
                                     <div class="col-2"><img style="height:30px;width:40px;" src="<?= base_url(); ?>/img/temparature.png"></div>
