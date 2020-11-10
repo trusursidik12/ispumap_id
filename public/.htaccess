@@ -51,16 +51,16 @@ Options All -Indexes
 
 
 # Add Font Types
-AddType application/vnd.ms-fontobject .eot
-AddType application/x-font-ttf        .ttf
-AddType application/x-font-opentype   .otf
-AddType application/font-woff         .woff
-AddType application/font-woff2        .woff2
+#AddType application/vnd.ms-fontobject .eot
+#AddType application/x-font-ttf        .ttf
+#AddType application/x-font-opentype   .otf
+#AddType application/font-woff         .woff
+#AddType application/font-woff2        .woff2
 
 # Add Image Types
-AddType image/svg+xml .svg .svgz .jpg .png .ico
-
-<FilesMatch ".(eot|ttf|otf|woff|woff2|svg|svgz|jpg|png|ico)">
-    # For live server change to your real domain!
-    Header set Access-Control-Allow-Origin "*"
-</FilesMatch>
+#AddType image/svg+xml .svg .svgz .jpg .png .ico
+#
+#<FilesMatch ".(eot|ttf|otf|woff|woff2|svg|svgz|jpg|png|ico)">
+#    # For live server change to your real domain!
+#    Header set Access-Control-Allow-Origin "*"
+#</FilesMatch>
