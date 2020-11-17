@@ -243,6 +243,9 @@
                     weather += "         <div class=\"col-7\"></div>";
                     weather += "     </div>";
                     weather += "     <div class=\"row\">";
+                    weather += "         <div class=\"col-12 text-right\"><button class='btn btn-primary' onclick=\"showWindSurface(this);\">Show Wind Surface</button></div>";
+                    weather += "     </div>";
+                    weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
                     weather += "        <div id='wrDiv' style='width:500px;'></div>";
                     weather += "     </div>";
                     weather += "</div>";
@@ -711,6 +714,19 @@
                 up_map_mark(e);
             });
         });
+    }
+
+    function showWindSurface(btn) {
+        if ($("#mainwindsurface").css('display') == 'none') {
+            $(btn).html("Show Map");
+            $("#mainwindsurface").html("<iframe style=\"width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;\" src=\"http://ispumaps.id:60000/#current/wind/surface/level/equirectangular=-244.96,-5.02,645\"></iframe>");
+            $("#mainwindsurface").show();
+            $("#mainmap").hide();
+        } else {
+            $(btn).html("Show Wind Surface");
+            $("#mainwindsurface").hide();
+            $("#mainmap").show();
+        }
     }
 </script>
 
