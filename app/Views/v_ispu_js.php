@@ -243,9 +243,6 @@
                     weather += "         <div class=\"col-7\"></div>";
                     weather += "     </div>";
                     weather += "     <div class=\"row\">";
-                    weather += "         <div class=\"col-12 text-right\"><button class='btn btn-primary' onclick=\"showWindSurface(this);\">Show Wind Surface</button></div>";
-                    weather += "     </div>";
-                    weather += "     <div class=\"row\" style=\"padding-bottom:10px;\">";
                     weather += "        <div id='wrDiv' style='width:500px;'></div>";
                     weather += "     </div>";
                     weather += "</div>";
@@ -719,7 +716,16 @@
     function showWindSurface(btn) {
         if ($("#mainwindsurface").css('display') == 'none') {
             $(btn).html("Show Map");
-            $("#mainwindsurface").html("<iframe style=\"width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;\" src=\"http://ispumaps.id:60000/#current/wind/surface/level/equirectangular=-244.96,-5.02,645\"></iframe>");
+            var showMap_btn = "<div class=\"leaflet-top leaflet-left\">";
+            showMap_btn += "    <div class=\"leaflet-control-layers leaflet-control leaflet-control-layers-expanded\" aria-haspopup=\"true\" style=\"margin-top: 12px;margin-left: 25px;\">";
+            showMap_btn += "        <section class=\"leaflet-control-layers-list\">";
+            showMap_btn += "            <div class=\"leaflet-control-layers-base\">";
+            showMap_btn += "                <a href=\"javascript:showWindSurface(this);\" style=\"cursor:pointer;\">Show Primary Map</a>";
+            showMap_btn += "            </div>";
+            showMap_btn += "        </section>";
+            showMap_btn += "    </div>";
+            showMap_btn += "</div>";
+            $("#mainwindsurface").html(showMap_btn + "<iframe style=\"width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;\" src=\"http://ispumaps.id:60000/#current/wind/surface/level/equirectangular=-244.96,-5.02,645\"></iframe>");
             $("#mainwindsurface").show();
             $("#mainmap").hide();
         } else {

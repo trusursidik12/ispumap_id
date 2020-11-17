@@ -121,8 +121,18 @@
                 <!-- This is where the map will go; do not delete the div 'mapcont'-->
                 <div class="mapcont">
                     <!-- z-index so it will go under the search bar and stuff-->
-                    <div id="mainmap" style="height:100%; z-index: 0;"></div>
-                    <div id="mainwindsurface" style="height:100%; z-index: 0;display:none;"></div>
+                    <div id="mainmap" style="height:100%; z-index: 0;">
+                        <div class="leaflet-top leaflet-left">
+                            <div class="leaflet-control-layers leaflet-control leaflet-control-layers-expanded" aria-haspopup="true">
+                                <section class="leaflet-control-layers-list">
+                                    <div class="leaflet-control-layers-base">
+                                        <a href="javascript:showWindSurface(this);" style="cursor:pointer;">Show Wind Surface</a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mainwindsurface" style="height:100%; z-index: 0;display:none;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"></div>
                 </div>
             </div>
         </div>
