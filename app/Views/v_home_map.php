@@ -11,6 +11,7 @@
                         <a class="nav-item nav-link active" id="nav-lokasi-tab" data-toggle="tab" href="#nav-lokasi" role="tab" aria-controls="nav-lokasi" aria-selected="true">Lokasi</a>
                         <a class="nav-item nav-link" id="nav-ispu-tab" data-toggle="tab" href="#nav-ispu" role="tab" aria-controls="nav-ispu" aria-selected="false">ISPU</a>
                         <a class="nav-item nav-link" id="nav-cuaca-tab" data-toggle="tab" href="#nav-cuaca" role="tab" aria-controls="nav-cuaca" aria-selected="false">Cuaca</a>
+                        <a class="nav-item nav-link" id="nav-grafik-tab" data-toggle="tab" href="#nav-grafik" role="tab" aria-controls="nav-grafik" aria-selected="false">Grafik</a>
                     </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
@@ -80,6 +81,12 @@
                     <div class="tab-pane fade" id="nav-cuaca" role="tabpanel" aria-labelledby="nav-cuaca-tab">
                         <div class="isdivider"></div>
                         Cuaca
+                    </div>
+
+                    <!--GRAFIK-->
+                    <div class="tab-pane fade" id="nav-grafik" role="tabpanel" aria-labelledby="nav-grafik-tab">
+                        <p class="text-muted text-center">Grafik Hari Ini <?=date("d M Y")?> <small id="id_stasiun"></small></p>
+                        <canvas id="linechart" height="100rem" width="100vw"></canvas>
                     </div>
                 </div>
             </div>

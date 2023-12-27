@@ -1,3 +1,12 @@
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="<?= base_url(); ?>/js/jquery/jquery-3.2.1.js"></script>
+<!-- <script src="<?= base_url(); ?>/js/jquery/jquery-2.2.4.min.js"></script> -->
+<!-- Popper js -->
+<script src="<?= base_url(); ?>/js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="<?= base_url(); ?>/js/bootstrap.min.js"></script>
+<!-- Active js -->
+<script src="<?= base_url(); ?>/js/active.js"></script>
 <!--Heatmap dependencies-->
 <script src="<?= base_url(); ?>/assets/heatmap/0_leaflet-heatmap/heatmap.js"></script>
 <script src="<?= base_url(); ?>/assets/heatmap/0_leaflet-heatmap/leaflet-heatmap.js"></script>
@@ -11,13 +20,80 @@
 <script src="<?= base_url(); ?>/assets/lwind.js"></script>
 
 <!--OWM Open Wind Map as placeholder for now-->
+<link href="
+https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css
+" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/OWM/leaflet-openweathermap.css">
 <script type="text/javascript" src="<?= base_url(); ?>/assets/OWM/leaflet-openweathermap.js"></script>
+<script src="
+https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js
+"></script>
+<script src="
+https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js
+"></script>
 
 <!--Square tiles for interpolation stuff-->
 <script src="<?= base_url(); ?>/js/idn_vector_squares.js"></script>
 
 <script>
+    let lineChart
+    function generateLineChart(id_stasiun){
+        console.log(id_stasiun)
+        let ctx = document.getElementById('linechart').getContext('2d');
+        $.ajax({
+            url : `https://api.trusur.tech/ispumapapi/api/aqmdatabyid/${id_stasiun}?trusur_api_key=VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==`,
+            type : 'GET',
+            dataType:'json',
+            success : function(data){
+                let labels = [], so2 = [], co=[],no2 = [],o3 = [],hc=[]
+                data.data.map((value)=>{
+                    labels.push(value.waktu.split(" ")[1])
+                    so2.push(value.so2)
+                    co.push(value.co)
+                    no2.push(value.no2)
+                    o3.push(value.o3)
+                    hc.push(value.hc)
+                })
+                if(lineChart) lineChart.destroy()
+                lineChart = new Chart(ctx, {
+                    type: 'line',
+                    label : 'Today',
+                    data: {
+                        labels: labels,
+                        datasets:[
+                            {
+                                label : 'SO2',
+                                data: so2
+                            },
+                            {
+                                label : 'CO',
+                                data: co
+                            },
+                            {
+                                label : 'NO2',
+                                data: no2
+                            },
+                            {
+                                label : 'O3',
+                                data: o3
+                            },
+                            {
+                                label : 'HC',
+                                data: hc
+                            },
+                        ]
+                    }
+                })
+            },
+            error:function(xhr, status, error){
+                if(lineChart) lineChart.destroy()
+                toastr.error(xhr.responseJSON.message)
+            }
+        })
+        
+    }
+    // generateLineChart("DKI_CILANGKAP")
     //Dynamic UI Updater
 
     function getCssIspuCategory($ispu) {
@@ -441,6 +517,9 @@
 
     //update location when circles are clicked
     function u_loc(e) {
+        let id_stasiun = e.target.options.circle_id
+        generateLineChart(id_stasiun)
+        $('#id_stasiun').html(id_stasiun)
         $('#mcard-city').text(e.target.options.circle_city);
         $('#mcard-address').text(e.target.options.circle_add);
         $('#mcard-status-number').text(e.target.options.circle_aq);
