@@ -1,4 +1,4 @@
-<footer class="footer text-muted" style="background-color:white">
+<!--footer class="footer text-muted" style="background-color:white">
     <div class="leftdots container-fluid p-5 mt-5" style="font-size: 0.8rem;">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -50,9 +50,17 @@
             </div>
         </div>
     </div>
-</footer>
+</footer-->
 
-
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="<?= base_url(); ?>/js/jquery/jquery-3.2.1.js"></script>
+<!-- <script src="<?= base_url(); ?>/js/jquery/jquery-2.2.4.min.js"></script> -->
+<!-- Popper js -->
+<script src="<?= base_url(); ?>/js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="<?= base_url(); ?>/js/bootstrap.min.js"></script>
+<!-- Active js -->
+<script src="<?= base_url(); ?>/js/active.js"></script>
 
 </body>
 

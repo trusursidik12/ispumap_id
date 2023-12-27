@@ -1,12 +1,3 @@
-<!-- jQuery (Necessary for All JavaScript Plugins) -->
-<script src="<?= base_url(); ?>/js/jquery/jquery-3.2.1.js"></script>
-<!-- <script src="<?= base_url(); ?>/js/jquery/jquery-2.2.4.min.js"></script> -->
-<!-- Popper js -->
-<script src="<?= base_url(); ?>/js/popper.min.js"></script>
-<!-- Bootstrap js -->
-<script src="<?= base_url(); ?>/js/bootstrap.min.js"></script>
-<!-- Active js -->
-<script src="<?= base_url(); ?>/js/active.js"></script>
 <!--Heatmap dependencies-->
 <script src="<?= base_url(); ?>/assets/heatmap/0_leaflet-heatmap/heatmap.js"></script>
 <script src="<?= base_url(); ?>/assets/heatmap/0_leaflet-heatmap/leaflet-heatmap.js"></script>
@@ -38,16 +29,22 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js
 
 <script>
     let lineChart
-    function generateLineChart(id_stasiun){
+
+    function generateLineChart(id_stasiun) {
         console.log(id_stasiun)
         let ctx = document.getElementById('linechart').getContext('2d');
         $.ajax({
-            url : `https://api.trusur.tech/ispumapapi/api/aqmdatabyid/${id_stasiun}?trusur_api_key=VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==`,
-            type : 'GET',
-            dataType:'json',
-            success : function(data){
-                let labels = [], so2 = [], co=[],no2 = [],o3 = [],hc=[]
-                data.data.map((value)=>{
+            url: `https://api.trusur.tech/ispumapapi/api/aqmdatabyid/${id_stasiun}?trusur_api_key=VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==`,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                let labels = [],
+                    so2 = [],
+                    co = [],
+                    no2 = [],
+                    o3 = [],
+                    hc = []
+                data.data.map((value) => {
                     labels.push(value.waktu.split(" ")[1])
                     so2.push(value.so2)
                     co.push(value.co)
@@ -55,43 +52,42 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js
                     o3.push(value.o3)
                     hc.push(value.hc)
                 })
-                if(lineChart) lineChart.destroy()
+                if (lineChart) lineChart.destroy()
                 lineChart = new Chart(ctx, {
                     type: 'line',
-                    label : 'Today',
+                    label: 'Today',
                     data: {
                         labels: labels,
-                        datasets:[
-                            {
-                                label : 'SO2',
+                        datasets: [{
+                                label: 'SO2',
                                 data: so2
                             },
                             {
-                                label : 'CO',
+                                label: 'CO',
                                 data: co
                             },
                             {
-                                label : 'NO2',
+                                label: 'NO2',
                                 data: no2
                             },
                             {
-                                label : 'O3',
+                                label: 'O3',
                                 data: o3
                             },
                             {
-                                label : 'HC',
+                                label: 'HC',
                                 data: hc
                             },
                         ]
                     }
                 })
             },
-            error:function(xhr, status, error){
-                if(lineChart) lineChart.destroy()
+            error: function(xhr, status, error) {
+                if (lineChart) lineChart.destroy()
                 toastr.error(xhr.responseJSON.message)
             }
         })
-        
+
     }
     // generateLineChart("DKI_CILANGKAP")
     //Dynamic UI Updater
@@ -698,7 +694,7 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js
         let f = []; //f is filtered d
         let g = []; //g is general purpose placeholder array
         //note to self: hide api key in env
-        $.get("<?= API_URL; ?>aqmstasiun?trusur_api_key=<?= API_KEY; ?>", function(aa) {
+        $.get("<?= API_URL; ?>aqmstasiungroup/dki_jakarta?trusur_api_key=<?= API_KEY; ?>", function(aa) {
             a = aa.data;
             $.get("<?= API_URL; ?>aqmispu?trusur_api_key=<?= API_KEY; ?>", function(ab) {
                 b = ab.data;
@@ -713,47 +709,49 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js
                     f = f[0]; //pick the first result by default
                     //color engine and ISPU finder
                     g = [];
-                    g.push(Number(f.pm25), Number(f.pm10), Number(f.co), Number(f.so2), Number(f.no2), Number(f.o3));
-                    let gg = Math.max(...g);
-                    switch (true) {
-                        case (gg <= 50):
-                            hh = '#19e32d';
-                            break;
-                        case (gg <= 100):
-                            hh = '#193ce3';
-                            break;
-                        case (gg <= 200):
-                            hh = '#f56a0d';
-                            break;
-                        case (gg <= 300):
-                            hh = '#a60909';
-                            break;
-                        default:
-                            hh = '#000000';
-                    };
-                    //c creator
-                    if (value.lat != null && value.lon != null) {
-                        c = {
-                            st_id: value.id_stasiun,
-                            loc_name: value.nama,
-                            loc_lat: Number(value.lat),
-                            loc_lng: Number(value.lon),
-                            loc_up: f.xtimetimes,
-                            loc_aq: gg,
-                            loc_pm25: Number(f.pm25),
-                            loc_pm10: Number(f.pm10),
-                            loc_co: Number(f.co),
-                            loc_so2: Number(f.so2),
-                            loc_no2: Number(f.no2),
-                            loc_o3: Number(f.o3),
-                            loc_col: hh,
-                            loc_kabkot: value.kota
-                            //add weather information here --> need api
-                            //for future vector tile grouping
-                            //loc_vtile: value.id_v_tile
+                    try {
+                        g.push(Number(f.pm25), Number(f.pm10), Number(f.co), Number(f.so2), Number(f.no2), Number(f.o3));
+                        let gg = Math.max(...g);
+                        switch (true) {
+                            case (gg <= 50):
+                                hh = '#19e32d';
+                                break;
+                            case (gg <= 100):
+                                hh = '#193ce3';
+                                break;
+                            case (gg <= 200):
+                                hh = '#f56a0d';
+                                break;
+                            case (gg <= 300):
+                                hh = '#a60909';
+                                break;
+                            default:
+                                hh = '#000000';
                         };
-                        e.push(c);
-                    };
+                        //c creator
+                        if (value.lat != null && value.lon != null) {
+                            c = {
+                                st_id: value.id_stasiun,
+                                loc_name: value.nama,
+                                loc_lat: Number(value.lat),
+                                loc_lng: Number(value.lon),
+                                loc_up: f.xtimetimes,
+                                loc_aq: gg,
+                                loc_pm25: Number(f.pm25),
+                                loc_pm10: Number(f.pm10),
+                                loc_co: Number(f.co),
+                                loc_so2: Number(f.so2),
+                                loc_no2: Number(f.no2),
+                                loc_o3: Number(f.o3),
+                                loc_col: hh,
+                                loc_kabkot: value.kota
+                                //add weather information here --> need api
+                                //for future vector tile grouping
+                                //loc_vtile: value.id_v_tile
+                            };
+                            e.push(c);
+                        };
+                    } catch (e) {}
                 });
                 //top 5 best cities // note to self, make this a separate async function
                 //city grouping first --> this uses ES6 --> note to self, find all instances that use ES6
