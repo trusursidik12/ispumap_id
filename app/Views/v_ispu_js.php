@@ -55,6 +55,12 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js
                     o3.push(value.o3)
                     hc.push(value.hc)
                 })
+                labels = labels.reverse()
+                so2 = so2.reverse()
+                co = co.reverse()
+                no2 = no2.reverse()
+                o3 = o3.reverse()
+                hc = hc.reverse()
                 if(lineChart) lineChart.destroy()
                 lineChart = new Chart(ctx, {
                     type: 'line',
